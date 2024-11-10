@@ -828,3 +828,483 @@ Multithreading is a feature of Java that allows concurrent execution of two or m
 
 #### **[⬆ Back to Top](#level--easy)**
 ---
+
+## 49. What is the Runnable interface?
+
+The `Runnable` interface should be implemented by any class whose instances are intended to be executed by a thread. The class must define a method of no arguments called `run`.
+
+```java
+public interface Runnable {
+    void run();
+}
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 50. What is the Thread class?
+
+The `Thread` class represents a thread of execution in a program. It provides constructors and methods for creating and operating on threads.
+
+```java
+public class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 51. What are the states of a thread in Java?
+
+A thread can be in one of the following states:
+
+- **New**: A thread that has not yet started.
+- **Runnable**: A thread executing in the Java virtual machine.
+- **Blocked**: A thread that is blocked waiting for a monitor lock.
+- **Waiting**: A thread that is waiting indefinitely for another thread to perform a particular action.
+- **Timed Waiting**: A thread that is waiting for another thread to perform an action for up to a specified waiting time.
+- **Terminated**: A thread that has exited.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 52. What is thread priority?
+
+Thread priority is an integer value that determines the relative priority of one thread compared to another. Java threads have a priority in the range between `MIN_PRIORITY` (1) and `MAX_PRIORITY` (10).
+
+```java
+Thread t1 = new Thread();
+t1.setPriority(Thread.MAX_PRIORITY);
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 53. What is the difference between wait() and sleep()?
+
+- **`wait()`**: Causes the current thread to wait until another thread invokes the `notify()` or `notifyAll()` methods. It must be called within a synchronized context.
+- **`sleep()`**: Causes the current thread to sleep for the specified number of milliseconds. It can be called from any context.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 54. What is the use of the join() method?
+
+The `join()` method allows one thread to wait until another thread completes its execution.
+
+```java
+Thread t1 = new Thread(() -> {
+    System.out.println("Thread 1 is running.");
+});
+t1.start();
+t1.join();
+System.out.println("Thread 1 has finished.");
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 55. What is the difference between notify() and notifyAll()?
+
+- **`notify()`**: Wakes up a single thread that is waiting on the object's monitor.
+- **`notifyAll()`**: Wakes up all threads that are waiting on the object's monitor.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 56. What is the difference between a class and an object?
+
+- **Class**: A blueprint from which individual objects are created.
+- **Object**: An instance of a class.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 57. What is the use of the new keyword?
+
+The `new` keyword is used to create new objects.
+
+```java
+MyClass obj = new MyClass();
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 58. What is the difference between an abstract class and an interface?
+
+- **Abstract Class**: Can have both abstract and concrete methods, and can have member variables.
+- **Interface**: Can only have abstract methods (until Java 8, where default and static methods were allowed), and cannot have instance variables.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 59. What is a package in Java?
+
+A package is a namespace that organizes a set of related classes and interfaces. For example, `java.util` contains utility classes like `ArrayList`, `HashMap`, etc.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 60. What is the use of the import statement?
+
+The `import` statement allows the use of classes and interfaces from other packages.
+
+```java
+import java.util.ArrayList;
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 61. What is the difference between import and static import?
+
+- **import**: Imports classes and interfaces.
+- **static import**: Imports static members from classes and interfaces.
+
+```java
+import static java.lang.Math.PI;
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 62. What is the use of the super keyword?
+
+The `super` keyword refers to the superclass (parent class) of the object. It is used to call superclass methods, and to access the superclass constructor.
+
+```java
+class Parent {
+    void display() {
+        System.out.println("Parent class method.");
+    }
+}
+
+class Child extends Parent {
+    void display() {
+        super.display();
+        System.out.println("Child class method.");
+    }
+}
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 63. What is the difference between an interface and a class?
+
+- **Class**: Can contain both concrete and abstract methods, and can have constructors.
+- **Interface**: Cannot have constructors and (before Java 8) could only contain abstract methods. From Java 8 onwards, it can contain default and static methods.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 64. What is the use of the instanceof keyword?
+
+The `instanceof` keyword is used to test whether an object is an instance of a specific class or an interface.
+
+```java
+if (obj instanceof MyClass) {
+    // Do something
+}
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 65. What is a nested class?
+
+A nested class is a class defined within another class.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 66. What is an inner class?
+
+An inner class is a non-static nested class that has access to the members of its enclosing class.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 67. What is a local inner class?
+
+A local inner class is a class defined within a method or a block of code.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 68. What is an anonymous inner class?
+
+An anonymous inner class is a local inner class without a name. It is used to instantiate objects with certain "extras," such as method overrides, without having to actually subclass a class.
+
+```java
+Runnable r = new Runnable() {
+    public void run() {
+        System.out.println("Anonymous inner class.");
+    }
+};
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 69. What is a static nested class?
+
+A static nested class is a nested class that is declared static. It does not have access to the instance variables of the outer class.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 70. What is the use of the transient keyword?
+
+The `transient` keyword in Java is used to indicate that a field should not be serialized.
+
+```java
+class MyClass implements Serializable {
+    transient int transientField;
+}
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 71. What is the use of the volatile keyword?
+
+The `volatile` keyword is used to indicate that a variable's value will be modified by different threads.
+
+```java
+private volatile boolean flag = true;
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 72. What is serialization?
+
+Serialization is the process of converting an object's state to a byte stream.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 73. What is deserialization?
+
+Deserialization is the process of converting a byte stream back into an object's state.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 74. What is the use of the Serializable interface?
+
+The `Serializable` interface is a marker interface that enables the serialization of an object.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 75. What is the difference between serialization and deserialization?
+
+- **Serialization**: Converting an object into a byte stream.
+- **Deserialization**: Converting a byte stream back into an object.
+
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 76. What is the use of the Externalizable interface?
+
+The `Externalizable` interface allows a class to define its own custom serialization and deserialization methods.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 77. What is the use of the readObject() method?
+
+The `readObject()` method is used for reading an object from an ObjectInputStream.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 78. What is the use of the writeObject() method?
+
+The `writeObject()` method is used for writing an object to an ObjectOutputStream.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 79. What is the use of the ClassNotFoundException?
+
+The `ClassNotFoundException` is thrown when an application tries to load a class through its string name but no definition for the class with the specified name could be found.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 80. What is the use of the IOException?
+
+The `IOException` is thrown when an I/O operation fails or is interrupted.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 81. What is the use of the FileNotFoundException?
+
+The `FileNotFoundException` is thrown when an attempt to open the file denoted by a specified pathname has failed.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 82. What is the use of the EOFException?
+
+The `EOFException` is thrown when the end of a file or stream is reached unexpectedly during input.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 83. What is the use of the ObjectInputStream class?
+
+The `ObjectInputStream` class is used to deserialize primitive data and objects previously written using an ObjectOutputStream.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 84. What is the use of the ObjectOutputStream class?
+
+The `ObjectOutputStream` class is used to serialize primitive data and objects to an OutputStream.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 85. What is the use of the FileInputStream class?
+
+The `FileInputStream` class is used to obtain input bytes from a file in a file system.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 86. What is the use of the FileOutputStream class?
+
+The `FileOutputStream` class is used to write output bytes to a file.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 87. What is the use of the BufferedReader class?
+
+The `BufferedReader` class is used to read text from an input stream efficiently.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 88. What is the use of the BufferedWriter class?
+
+The `BufferedWriter` class is used to write text to an output stream efficiently.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 89. What is the use of the PrintWriter class?
+
+The `PrintWriter` class is used to print formatted representations of objects to a text-output stream.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 90. What is the use of the Scanner class?
+
+The `Scanner` class is used to parse primitive types and strings using regular expressions.
+
+```java
+Scanner sc = new Scanner(System.in);
+int i = sc.nextInt();
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 91. What is the use of the System.in?
+
+`System.in` is an InputStream that is typically connected to the keyboard input of the console.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 92. What is the use of the System.out?
+
+`System.out` is a PrintStream that is typically connected to the console output.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 93. What is the use of the System.err?
+
+`System.err` is a PrintStream that is typically connected to the console error output.
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 94. What is the use of the printf() method?
+
+The `printf()` method is used to print a formatted string to the console.
+
+```java
+System.out.printf("Name: %s Age: %d", "John", 25);
+```
+
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 95. What is the use of the format() method?
+
+The `format()` method is similar to `printf()` and is used to create a formatted string.
+
+```java
+String formattedString = String.format("Name: %s Age: %d", "John", 25);
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 96. What is the use of the println() method?
+
+The `println()` method is used to print a string to the console with a newline at the end.
+
+```java
+System.out.println("Hello, World!");
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 97. What is the use of the print() method?
+
+The `print()` method is used to print a string to the console without a newline.
+
+```java
+System.out.print("Hello, ");
+System.out.print("World!");
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 98. What is the use of the read() method?
+
+The `read()` method is used to read a byte of data from an InputStream.
+
+```java
+int data = System.in.read();
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 99. What is the use of the write() method?
+
+The `write()` method is used to write a byte of data to an OutputStream.
+
+```java
+System.out.write(65); // Writes the character 'A'
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
+
+## 100. What is the use of the flush() method?
+
+The `flush()` method is used to flush the OutputStream, forcing any buffered output bytes to be written out.
+
+```java
+OutputStream out = new FileOutputStream("output.txt");
+out.write("Hello, World!".getBytes());
+out.flush();
+```
+#### **[⬆ Back to Top](#level--easy)**
+---
