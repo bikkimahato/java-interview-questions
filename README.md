@@ -146,6 +146,111 @@ Happy coding! If you find this repository helpful, please give it a star ⭐ and
 | 99  | [What is the use of the write() method?](#99-what-is-the-use-of-the-write-method) |
 | 100 | [What is the use of the flush() method?](#100-what-is-the-use-of-the-flush-method) |
 
+### Table of Contents
+### Level : Medium
+| No. | Questions |
+| --- | --------- |
+| 1   | [Explain the concept of garbage collection in Java.](#1-explain-the-concept-of-garbage-collection-in-java) |
+| 2   | [What is the difference between heap and stack memory in Java?](#2-what-is-the-difference-between-heap-and-stack-memory-in-java) |
+| 3   | [What is the purpose of the finalize() method?](#3-what-is-the-purpose-of-the-finalize-method) |
+| 4   | [What is the use of the System.gc() method?](#4-what-is-the-use-of-the-systemgc-method) |
+| 5   | [What is the difference between an abstract class and a concrete class?](#5-what-is-the-difference-between-an-abstract-class-and-a-concrete-class) |
+| 6   | [What is the difference between an interface and an abstract class?](#6-what-is-the-difference-between-an-interface-and-an-abstract-class) |
+| 7   | [What is the use of the extends keyword?](#7-what-is-the-use-of-the-extends-keyword) |
+| 8   | [What is the use of the implements keyword?](#8-what-is-the-use-of-the-implements-keyword) |
+| 9   | [What is the use of the @Override annotation?](#9-what-is-the-use-of-the-override-annotation) |
+| 10  | [What is the difference between a shallow copy and a deep copy?](#10-what-is-the-difference-between-a-shallow-copy-and-a-deep-copy) |
+| 11  | [What is the use of the clone() method?](#11-what-is-the-use-of-the-clone-method) |
+| 12  | [What is the difference between the equals() method and the == operator?](#12-what-is-the-difference-between-the-equals-method-and-the--operator) |
+| 13  | [What is the use of the hashCode() method?](#13-what-is-the-use-of-the-hashcode-method) |
+| 14  | [What is the difference between a HashMap and a TreeMap?](#14-what-is-the-difference-between-a-hashmap-and-a-treemap) |
+| 15  | [What is the difference between a HashSet and a TreeSet?](#15-what-is-the-difference-between-a-hashset-and-a-treeset) |
+| 16  | [What is the difference between a List and a Set?](#16-what-is-the-difference-between-a-list-and-a-set) |
+| 17  | [What is the difference between an ArrayList and a LinkedList?](#17-what-is-the-difference-between-an-arraylist-and-a-linkedlist) |
+| 18  | [What is the difference between a Vector and an ArrayList?](#18-what-is-the-difference-between-a-vector-and-an-arraylist) |
+| 19  | [What is the difference between a Stack and a Queue?](#19-what-is-the-difference-between-a-stack-and-a-queue) |
+| 20  | [What is the difference between a PriorityQueue and a LinkedList?](#20-what-is-the-difference-between-a-priorityqueue-and-a-linkedlist) |
+| 21  | [What is the use of the Collections class?](#21-what-is-the-use-of-the-collections-class) |
+| 22  | [What is the use of the Arrays class?](#22-what-is-the-use-of-the-arrays-class) |
+| 23  | [What is the use of the Comparator interface?](#23-what-is-the-use-of-the-comparator-interface) |
+| 24  | [What is the use of the Comparable interface?](#24-what-is-the-use-of-the-comparable-interface) |
+| 25  | [What is the difference between the Iterator and the ListIterator?](#25-what-is-the-difference-between-the-iterator-and-the-listiterator) |
+| 26  | [What is the use of the forEach() method?](#26-what-is-the-use-of-the-foreach-method) |
+| 27  | [What is the use of the stream() method?](#27-what-is-the-use-of-the-stream-method) |
+| 28  | [What is the use of the filter() method?](#28-what-is-the-use-of-the-filter-method) |
+| 29  | [What is the use of the map() method?](#29-what-is-the-use-of-the-map-method) |
+| 30  | [What is the use of the reduce() method?](#30-what-is-the-use-of-the-reduce-method) |
+| 31  | [What is the use of the collect() method?](#31-what-is-the-use-of-the-collect-method) |
+| 32  | [What is the use of the Optional class?](#32-what-is-the-use-of-the-optional-class) |
+| 33  | [What is the use of the lambda expression?](#33-what-is-the-use-of-the-lambda-expression) |
+| 34  | [What is the use of the method reference?](#34-what-is-the-use-of-the-method-reference) |
+| 35  | [What is the use of the functional interface?](#35-what-is-the-use-of-the-functional-interface) |
+| 36  | [What is the use of the default method in an interface?](#36-what-is-the-use-of-the-default-method-in-an-interface) |
+| 37  | [What is the use of the static method in an interface?](#37-what-is-the-use-of-the-static-method-in-an-interface) |
+| 38  | [What is the use of the Stream API?](#38-what-is-the-use-of-the-stream-api) |
+| 39  | [What is the use of the Date and Time API?](#39-what-is-the-use-of-the-date-and-time-api) |
+| 40  | [What is the use of the LocalDate class?](#40-what-is-the-use-of-the-localdate-class) |
+| 41  | [What is the use of the LocalTime class?](#41-what-is-the-use-of-the-localtime-class) |
+| 42  | [What is the use of the LocalDateTime class?](#42-what-is-the-use-of-the-localdatetime-class) |
+| 43  | [What is the use of the ZonedDateTime class?](#43-what-is-the-use-of-the-zoneddatetime-class) |
+| 44  | [What is the use of the Instant class?](#44-what-is-the-use-of-the-instant-class) |
+| 45  | [What is the use of the Duration class?](#45-what-is-the-use-of-the-duration-class) |
+| 46  | [What is the use of the Period class?](#46-what-is-the-use-of-the-period-class) |
+| 47  | [What is the use of the DateTimeFormatter class?](#47-what-is-the-use-of-the-datetimeformatter-class) |
+| 48  | [What is the use of the DateTimeParseException?](#48-what-is-the-use-of-the-datetimeparseexception) |
+| 49  | [What is the use of the ChronoUnit class?](#49-what-is-the-use-of-the-chronounit-class) |
+| 50  | [What is the use of the ChronoField class?](#50-what-is-the-use-of-the-chronofield-class) |
+| 51  | [What is the use of the TemporalAdjusters class?](#51-what-is-the-use-of-the-temporaladjusters-class) |
+| 52  | [What is the use of the TemporalQueries class?](#52-what-is-the-use-of-the-temporalqueries-class) |
+| 53  | [What is the use of the TemporalAmount interface?](#53-what-is-the-use-of-the-temporalamount-interface) |
+| 54  | [What is the use of the TemporalUnit interface?](#54-what-is-the-use-of-the-temporalunit-interface) |
+| 55  | [What is the use of the TemporalField interface?](#55-what-is-the-use-of-the-temporalfield-interface) |
+| 56  | [What is the use of the TemporalAccessor interface?](#56-what-is-the-use-of-the-temporalaccessor-interface) |
+| 57  | [What is the use of the TemporalAdjuster interface?](#57-what-is-the-use-of-the-temporaladjuster-interface) |
+| 58  | [What is the use of the TemporalQuery interface?](#58-what-is-the-use-of-the-temporalquery-interface) |
+| 59  | [What is the use of the Temporal interface?](#59-what-is-the-use-of-the-temporal-interface) |
+| 60  | [What is the use of the TemporalAmount implementation?](#60-what-is-the-use-of-the-temporalamount-implementation) |
+| 61  | [What is the use of the TemporalUnit implementation?](#61-what-is-the-use-of-the-temporalunit-implementation) |
+| 62  | [What is the use of the TemporalField implementation?](#62-what-is-the-use-of-the-temporalfield-implementation) |
+| 63  | [What is the use of the TemporalAccessor implementation?](#63-what-is-the-use-of-the-temporalaccessor-implementation) |
+| 64  | [What is the use of the TemporalAdjuster implementation?](#64-what-is-the-use-of-the-temporaladjuster-implementation) |
+| 65  | [What is the use of the TemporalQuery implementation?](#65-what-is-the-use-of-the-temporalquery-implementation) |
+| 66  | [What is the use of the Temporal implementation?](#66-what-is-the-use-of-the-temporal-implementation) |
+| 67  | [What is the use of the Stream API for parallel processing?](#67-what-is-the-use-of-the-stream-api-for-parallel-processing) |
+| 68  | [What is the use of the CompletableFuture class?](#68-what-is-the-use-of-the-completablefuture-class) |
+| 69  | [What is the use of the ExecutorService interface?](#69-what-is-the-use-of-the-executorservice-interface) |
+| 70  | [What is the use of the Executors class?](#70-what-is-the-use-of-the-executors-class) |
+| 71  | [What is the use of the ScheduledExecutorService interface?](#71-what-is-the-use-of-the-scheduledexecutorservice-interface) |
+| 72  | [What is the use of the Callable interface?](#72-what-is-the-use-of-the-callable-interface) |
+| 73  | [What is the use of the Future interface?](#73-what-is-the-use-of-the-future-interface) |
+| 74  | [What is the use of the FutureTask class?](#74-what-is-the-use-of-the-futuretask-class) |
+| 75  | [What is the use of the CountDownLatch class?](#75-what-is-the-use-of-the-countdownlatch-class) |
+| 76  | [What is the use of the CyclicBarrier class?](#76-what-is-the-use-of-the-cyclicbarrier-class) |
+| 77  | [What is the use of the Semaphore class?](#77-what-is-the-use-of-the-semaphore-class) |
+| 78  | [What is the use of the ReentrantLock class?](#78-what-is-the-use-of-the-reentrantlock-class) |
+| 79  | [What is the use of the ReadWriteLock interface?](#79-what-is-the-use-of-the-readwritelock-interface) |
+| 80  | [What is the use of the StampedLock class?](#80-what-is-the-use-of-the-stampedlock-class) |
+| 81  | [What is the use of the Condition interface?](#81-what-is-the-use-of-the-condition-interface) |
+| 82  | [What is the use of the BlockingQueue interface?](#82-what-is-the-use-of-the-blockingqueue-interface) |
+| 83  | [What is the use of the LinkedBlockingQueue class?](#83-what-is-the-use-of-the-linkedblockingqueue-class) |
+| 84  | [What is the use of the PriorityBlockingQueue class?](#84-what-is-the-use-of-the-priorityblockingqueue-class) |
+| 85  | [What is the use of the DelayQueue class?](#85-what-is-the-use-of-the-delayqueue-class) |
+| 86  | [What is the use of the SynchronousQueue class?](#86-what-is-the-use-of-the-synchronousqueue-class) |
+| 87  | [What is the use of the TransferQueue interface?](#87-what-is-the-use-of-the-transferqueue-interface) |
+| 88  | [What is the use of the LinkedTransferQueue class?](#88-what-is-the-use-of-the-linkedtransferqueue-class) |
+| 89  | [What is the use of the ConcurrentMap interface?](#89-what-is-the-use-of-the-concurrentmap-interface) |
+| 90  | [What is the use of the ConcurrentHashMap class?](#90-what-is-the-use-of-the-concurrenthashmap-class) |
+| 91  | [What is the use of the CopyOnWriteArrayList class?](#91-what-is-the-use-of-the-copyonwritearraylist-class) |
+| 92  | [What is the use of the CopyOnWriteArraySet class?](#92-what-is-the-use-of-the-copyonwritearrayset-class) |
+| 93  | [What is the use of the ConcurrentSkipListMap class?](#93-what-is-the-use-of-the-concurrentskiplistmap-class) |
+| 94  | [What is the use of the ConcurrentSkipListSet class?](#94-what-is-the-use-of-the-concurrentskiplistset-class) |
+| 95  | [What is the use of the AtomicInteger class?](#95-what-is-the-use-of-the-atomicinteger-class) |
+| 96  | [What is the use of the AtomicLong class?](#96-what-is-the-use-of-the-atomiclong-class) |
+| 97  | [What is the use of the AtomicReference class?](#97-what-is-the-use-of-the-atomicreference-class) |
+| 98  | [What is the use of the AtomicBoolean class?](#98-what-is-the-use-of-the-atomicboolean-class) |
+| 99  | [What is the use of the AtomicIntegerArray class?](#99-what-is-the-use-of-the-atomicintegerarray-class) |
+| 100 | [What is the use of the AtomicLongArray class?](#100-what-is-the-use-of-the-atomiclongarray-class) |
+
 
 # Easy Java Interview Questions and Answers
 ## 1. What is Java?
