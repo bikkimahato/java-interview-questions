@@ -1752,3 +1752,386 @@ The `TemporalUnit` interface represents a unit of time, such as DAYS, HOURS, and
 
 #### **[⬆ Back to Top](#level--medium)**
 ---
+
+## 55. What is the use of the `TemporalField` interface?
+The `TemporalField` interface represents a field of date-time, such as YEAR, MONTH_OF_YEAR, and DAY_OF_MONTH. It is used to manipulate date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 56. What is the use of the `TemporalAccessor` interface?
+The `TemporalAccessor` interface provides read-only access to date-time objects. It is used to extract information from date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 57. What is the use of the `TemporalAdjuster` interface?
+The `TemporalAdjuster` interface provides a way to manipulate date-time objects. It is used to adjust date-time objects according to specific rules.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 58. What is the use of the `TemporalQuery` interface?
+The `TemporalQuery` interface provides a way to query information from date-time objects. It is used to extract specific information from date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 59. What is the use of the `Temporal` interface?
+The `Temporal` interface represents a date-time object with fields and units. It provides methods to manipulate and query date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 60. What is the use of the `TemporalAmount` implementation?
+The `TemporalAmount` implementation, such as `Duration` and `Period`, represents an amount of time. It is used to perform date-time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 61. What is the use of the `TemporalUnit` implementation?
+The `TemporalUnit` implementation, such as `ChronoUnit`, represents a unit of time. It is used to perform date-time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 62. What is the use of the `TemporalField` implementation?
+The `TemporalField` implementation, such as `ChronoField`, represents a field of date-time. It is used to manipulate date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 63. What is the use of the `TemporalAccessor` implementation?
+The `TemporalAccessor` implementation provides read-only access to date-time objects. It is used to extract information from date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 64. What is the use of the `TemporalAdjuster` implementation?
+The `TemporalAdjuster` implementation, such as `TemporalAdjusters`, provides a way to manipulate date-time objects. It is used to adjust date-time objects according to specific rules.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 65. What is the use of the `TemporalQuery` implementation?
+The `TemporalQuery` implementation, such as `TemporalQueries`, provides a way to query information from date-time objects. It is used to extract specific information from date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 66. What is the use of the `Temporal` implementation?
+The `Temporal` implementation represents a date-time object with fields and units. It provides methods to manipulate and query date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 67. What is the use of the Stream API for parallel processing?
+The Stream API for parallel processing allows processing elements concurrently, leveraging multi-core processors to improve performance.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 68. What is the use of the `CompletableFuture` class?
+The `CompletableFuture` class is used to write asynchronous, non-blocking code. It provides methods to compose and combine multiple asynchronous tasks.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 69. What is the use of the `ExecutorService` interface?
+The `ExecutorService` interface provides methods to manage and control thread execution. It supports tasks submission, shutdown, and lifecycle management.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 70. What is the use of the `Executors` class?
+The `Executors` class provides factory methods for creating thread pools and other executor services.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 71. What is the use of the `ScheduledExecutorService` interface?
+The `ScheduledExecutorService` interface extends `ExecutorService` and provides methods to schedule tasks to run after a delay or periodically.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 72. What is the use of the `Callable` interface?
+The `Callable` interface represents a task that returns a result and may throw an exception. It is used with `ExecutorService` for concurrent execution.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 73. What is the use of the `Future` interface?
+The `Future` interface represents the result of an asynchronous computation. It provides methods to check if the computation is complete and retrieve the result.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 74. What is the use of the `FutureTask` class?
+The `FutureTask` class is a concrete implementation of `Future` and `Runnable`. It can be used to wrap a `Callable` or `Runnable` and execute it asynchronously.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 75. What is the use of the `CountDownLatch` class?
+The `CountDownLatch` class is used to synchronize one or more threads by allowing them to wait until a set of operations being performed by other threads completes.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 76. What is the use of the `CyclicBarrier` class?
+The `CyclicBarrier` class is used to synchronize a fixed number of threads by allowing them to wait until all threads reach a common barrier point.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 77. What is the use of the `Semaphore` class?
+The `Semaphore` class is used to control access to a shared resource by allowing a limited number of threads to acquire a permit and access the resource.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 78. What is the use of the `ReentrantLock` class?
+The `ReentrantLock` class is a reentrant mutual exclusion lock with the same basic behavior as the implicit monitor lock. It provides more flexibility and features.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 79. What is the use of the `ReadWriteLock` interface?
+The `ReadWriteLock` interface maintains a pair of associated locks, one for read-only operations and one for write operations. It improves performance by allowing multiple readers but only one writer.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 80. What is the use of the `StampedLock` class?
+The `StampedLock` class is a lock with three modes for controlling read/write access: Writing, Reading, and Optimistic Reading. It provides better performance for high-concurrency scenarios.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 81. What is the use of the `Condition` interface?
+The `Condition` interface provides a means for threads to wait until a specific condition is met. It is used in combination with `Lock` implementations.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 82. What is the use of the `BlockingQueue` interface?
+The `BlockingQueue` interface represents a thread-safe queue that supports operations that wait for the queue to become non-empty or non-full.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 83. What is the use of the `LinkedBlockingQueue` class?
+The `LinkedBlockingQueue` class is a bounded blocking queue backed by linked nodes. It supports an optional capacity bound and provides thread-safe operations.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 84. What is the use of the `PriorityBlockingQueue` class?
+The `PriorityBlockingQueue` class is an unbounded blocking queue that uses the same ordering rules as `PriorityQueue` and provides thread-safe operations.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 85. What is the use of the `DelayQueue` class?
+The `DelayQueue` class is a blocking queue in which elements can only be taken when their delay has expired. It is used for scheduling tasks.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 86. What is the use of the `SynchronousQueue` class?
+The `SynchronousQueue` class is a blocking queue in which each insert operation must wait for a corresponding remove operation by another thread. It is used for handoff designs.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 87. What is the use of the `TransferQueue` interface?
+
+The `TransferQueue` interface is a specialized type of `BlockingQueue` that supports an additional method called `transfer`. This method allows for handoff of elements from producers to consumers directly, blocking until the element is consumed. It is particularly useful in scenarios where the producer wants to ensure that the consumer has received the message before moving on.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 88. What is the use of the `LinkedTransferQueue` class?
+
+The `LinkedTransferQueue` class is an implementation of the `TransferQueue` interface. It provides an unbounded, thread-safe, and highly performant queue with the ability to transfer elements directly from producers to consumers. It supports both waiting and non-waiting operations, making it versatile for many concurrent programming scenarios.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 89. What is the use of the `ConcurrentMap` interface?
+
+The `ConcurrentMap` interface represents a thread-safe version of the `Map` interface. It provides atomic operations like `putIfAbsent`, `remove`, and `replace`, which are essential for safe concurrent access and modifications to the map. This helps in avoiding race conditions without needing explicit synchronization.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 90. What is the use of the `ConcurrentHashMap` class?
+
+The `ConcurrentHashMap` class is an implementation of the `ConcurrentMap` interface. It provides a thread-safe, high-performance map that allows concurrent read and write operations. Internally, it uses a finer-grained locking mechanism (segment locks) to improve performance compared to a synchronized `HashMap`.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 91. What is the use of the `CopyOnWriteArrayList` class?
+
+The `CopyOnWriteArrayList` class is a thread-safe variant of `ArrayList` where all mutative operations (like `add`, `set`, `remove`) are implemented by creating a new copy of the underlying array. This makes it suitable for scenarios where read operations vastly outnumber write operations, as reads do not block and are very fast.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 92. What is the use of the `CopyOnWriteArraySet` class?
+
+The `CopyOnWriteArraySet` class is a thread-safe variant of `Set` backed by a `CopyOnWriteArrayList`. It provides similar benefits, making it ideal for use cases with many read operations and few writes. This ensures that iteration and read operations are fast and do not encounter concurrency issues.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 93. What is the use of the `ConcurrentSkipListMap` class?
+
+The `ConcurrentSkipListMap` class is a thread-safe implementation of a `NavigableMap` based on a skip list. It maintains elements in a sorted order and allows concurrent access and updates. This makes it suitable for applications requiring a sorted map with high concurrency performance.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 94. What is the use of the `ConcurrentSkipListSet` class?
+
+The `ConcurrentSkipListSet` class is a thread-safe implementation of a `NavigableSet` based on a skip list. Like `ConcurrentSkipListMap`, it maintains elements in a sorted order and allows concurrent access and modifications. It is ideal for use cases needing a sorted set with high concurrency.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 95. What is the use of the `AtomicInteger` class?
+
+The `AtomicInteger` class provides an integer value that can be updated atomically. It supports atomic operations like `incrementAndGet`, `decrementAndGet`, `addAndGet`, and `compareAndSet`, making it useful for counters and other numeric operations where thread safety is required.
+
+```java
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class AtomicIntegerExample {
+    private AtomicInteger counter = new AtomicInteger(0);
+
+    public void increment() {
+        counter.incrementAndGet();
+    }
+
+    public int get() {
+        return counter.get();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 96. What is the use of the `AtomicLong` class?
+
+The `AtomicLong` class provides a long value that can be updated atomically. It offers similar atomic operations as `AtomicInteger`, making it useful for large numeric values requiring thread-safe updates.
+
+```java
+import java.util.concurrent.atomic.AtomicLong;
+
+public class AtomicLongExample {
+    private AtomicLong counter = new AtomicLong(0);
+
+    public void increment() {
+        counter.incrementAndGet();
+    }
+
+    public long get() {
+        return counter.get();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 97. What is the use of the `AtomicReference` class?
+
+The `AtomicReference` class offers a way to atomically update reference variables. It provides atomic operations like `compareAndSet`, `getAndSet`, and `weakCompareAndSet`, making it useful for implementing lock-free data structures or managing volatile references safely.
+
+```java
+import java.util.concurrent.atomic.AtomicReference;
+
+public class AtomicReferenceExample {
+    private AtomicReference<String> reference = new AtomicReference<>("initial");
+
+    public void setReference(String newValue) {
+        reference.set(newValue);
+    }
+
+    public String getReference() {
+        return reference.get();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 98. What is the use of the `AtomicBoolean` class?
+
+The `AtomicBoolean` class provides an atomic boolean value. It supports atomic operations like `compareAndSet`, `getAndSet`, and `get`, making it useful for flags and state management in a thread-safe way.
+
+```java
+import java.util.concurrent.atomic.AtomicBoolean;
+
+public class AtomicBooleanExample {
+    private AtomicBoolean flag = new AtomicBoolean(false);
+
+    public void setFlag(boolean newValue) {
+        flag.set(newValue);
+    }
+
+    public boolean getFlag() {
+        return flag.get();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 99. What is the use of the `AtomicIntegerArray` class?
+
+The `AtomicIntegerArray` class provides an array of integers where each element can be updated atomically. It supports atomic operations on array elements like `getAndIncrement`, `compareAndSet`, and `get`, making it useful for applications requiring thread-safe access to an array of integers.
+
+```java
+import java.util.concurrent.atomic.AtomicIntegerArray;
+
+public class AtomicIntegerArrayExample {
+    private AtomicIntegerArray array = new AtomicIntegerArray(10);
+
+    public void incrementElement(int index) {
+        array.incrementAndGet(index);
+    }
+
+    public int getElement(int index) {
+        return array.get(index);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 100. What is the use of the `AtomicLongArray` class?
+
+The `AtomicLongArray` class provides an array of long values where each element can be updated atomically. It supports atomic operations on array elements similar to `AtomicIntegerArray`, making it useful for applications requiring thread-safe access to an array of long values.
+
+```java
+import java.util.concurrent.atomic.AtomicLongArray;
+
+public class AtomicLongArrayExample {
+    private AtomicLongArray array = new AtomicLongArray(10);
+
+    public void incrementElement(int index) {
+        array.incrementAndGet(index);
+    }
+
+    public long getElement(int index) {
+        return array.get(index);
+    }
+}
+```
+
+These classes and interfaces are essential tools for developing concurrent applications in Java, providing thread-safe data structures and atomic operations to avoid race conditions and ensure data integrity.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
