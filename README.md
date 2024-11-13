@@ -1413,3 +1413,342 @@ out.flush();
 ```
 #### **[⬆ Back to Top](#level--easy)**
 ---
+
+# Medium Java Interview Questions and Answers
+
+## 1. Explain the concept of garbage collection in Java.
+Garbage collection in Java is the process of automatically reclaiming memory by identifying and disposing of objects that are no longer in use. The Java Virtual Machine (JVM) manages this, which helps in preventing memory leaks. It utilizes algorithms like mark-and-sweep, generational, and reference counting to identify unreachable objects and reclaim their memory.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 2. What is the difference between heap and stack memory in Java?
+- **Heap Memory**: Used for dynamic memory allocation where objects and class instances are stored. It is managed by the garbage collector.
+- **Stack Memory**: Used for static memory allocation where method calls and local variables are stored. It follows a Last-In-First-Out (LIFO) order.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 3. What is the purpose of the `finalize()` method?
+The `finalize()` method is called by the garbage collector on an object when garbage collection determines that there are no more references to the object. It is used to perform cleanup operations before the object is reclaimed.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 4. What is the use of the `System.gc()` method?
+The `System.gc()` method is a request to the JVM to perform garbage collection. However, it is not guaranteed that the JVM will execute the garbage collection immediately.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 5. What is the difference between an abstract class and a concrete class?
+- **Abstract Class**: Cannot be instantiated and may contain abstract methods (methods without a body). It is used to represent an abstract concept.
+- **Concrete Class**: Can be instantiated and must provide implementations for all inherited abstract methods.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 6. What is the difference between an interface and an abstract class?
+- **Interface**: Can contain abstract methods and default methods. A class can implement multiple interfaces.
+- **Abstract Class**: Can contain both abstract methods and concrete methods. A class can extend only one abstract class.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 7. What is the use of the `extends` keyword?
+The `extends` keyword is used to indicate that a class is inheriting properties and methods from a superclass.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 8. What is the use of the `implements` keyword?
+The `implements` keyword is used to indicate that a class is implementing the methods defined in an interface.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 9. What is the use of the `@Override` annotation?
+The `@Override` annotation indicates that a method is overriding a method from a superclass. It helps in compile-time checking and readability.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 10. What is the difference between a shallow copy and a deep copy?
+- **Shallow Copy**: Copies the object's reference, not the object itself. Changes to the copied object reflect in the original object.
+- **Deep Copy**: Copies the object and the objects it references. Changes to the copied object do not affect the original object.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 11. What is the use of the `clone()` method?
+The `clone()` method creates a shallow copy of the object. It must be overridden and implemented to support deep copying.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 12. What is the difference between the `equals()` method and the `==` operator?
+- **equals() Method**: Compares the value/content of two objects.
+- **== Operator**: Compares the reference/address of two objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 13. What is the use of the `hashCode()` method?
+The `hashCode()` method returns an integer hash code value for the object, used in hashing-based collections like `HashMap`, `HashSet`, etc.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 14. What is the difference between a `HashMap` and a `TreeMap`?
+- **HashMap**: Unordered collection based on hash codes.
+- **TreeMap**: Ordered collection based on natural ordering or a custom comparator.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 15. What is the difference between a `HashSet` and a `TreeSet`?
+- **HashSet**: Unordered collection of unique elements.
+- **TreeSet**: Ordered collection of unique elements based on natural ordering or a custom comparator.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 16. What is the difference between a `List` and a `Set`?
+- **List**: Ordered collection that allows duplicates.
+- **Set**: Unordered collection that does not allow duplicates.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 17. What is the difference between an `ArrayList` and a `LinkedList`?
+- **ArrayList**: Backed by a dynamic array, provides fast random access.
+- **LinkedList**: Backed by a doubly-linked list, provides fast insertions and deletions.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 18. What is the difference between a `Vector` and an `ArrayList`?
+- **Vector**: Synchronized, thread-safe, and slow.
+- **ArrayList**: Non-synchronized, not thread-safe, and fast.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 19. What is the difference between a `Stack` and a `Queue`?
+- **Stack**: LIFO (Last-In-First-Out) structure.
+- **Queue**: FIFO (First-In-First-Out) structure.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 20. What is the difference between a `PriorityQueue` and a `LinkedList`?
+- **PriorityQueue**: Orders elements based on their natural ordering or a custom comparator.
+- **LinkedList**: Orders elements in insertion order.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 21. What is the use of the `Collections` class?
+The `Collections` class provides utility methods for collections, such as sorting, searching, and synchronization.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 22. What is the use of the `Arrays` class?
+The `Arrays` class provides utility methods for arrays, such as sorting, searching, and converting arrays to lists.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 23. What is the use of the `Comparator` interface?
+The `Comparator` interface defines a custom order for objects. It can be used to sort collections based on multiple criteria.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 24. What is the use of the `Comparable` interface?
+The `Comparable` interface defines the natural order for objects. It provides a `compareTo` method to compare objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 25. What is the difference between the `Iterator` and the `ListIterator`?
+- **Iterator**: Can traverse elements in one direction.
+- **ListIterator**: Can traverse elements in both directions and modify the list during iteration.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 26. What is the use of the `forEach()` method?
+The `forEach()` method performs an action for each element of the collection. It is a convenient way to iterate over collections.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 27. What is the use of the `stream()` method?
+The `stream()` method converts a collection into a Stream for functional-style operations, such as filtering, mapping, and reducing.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 28. What is the use of the `filter()` method?
+The `filter()` method is used to select elements from a Stream based on a given predicate.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 29. What is the use of the `map()` method?
+The `map()` method transforms elements in a Stream by applying a given function to each element.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 30. What is the use of the `reduce()` method?
+The `reduce()` method combines elements of a Stream into a single result using a given binary operator.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 31. What is the use of the `collect()` method?
+The `collect()` method accumulates elements of a Stream into a collection or other result type.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 32. What is the use of the `Optional` class?
+The `Optional` class is a container object which may or may not contain a non-null value. It helps in avoiding null checks and NullPointerException.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 33. What is the use of the lambda expression?
+Lambda expressions provide a concise way to implement functional interfaces using an expression or block of code.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 34. What is the use of the method reference?
+Method references provide a way to refer to methods or constructors without invoking them. They are compact and readable.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 35. What is the use of the functional interface?
+A functional interface is an interface with a single abstract method. It can be used as the assignment target for lambda expressions or method references.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 36. What is the use of the default method in an interface?
+Default methods allow interfaces to have methods with default implementations. They enable interfaces to evolve without breaking existing implementations.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 37. What is the use of the static method in an interface?
+Static methods in interfaces provide utility or helper methods that are relevant to the interface but do not require an instance.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 38. What is the use of the Stream API?
+The Stream API provides a functional approach to processing collections of objects. It supports operations like filtering, mapping, and reducing.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 39. What is the use of the Date and Time API?
+The Date and Time API provides a comprehensive and flexible way to handle date and time. It includes classes like `LocalDate`, `LocalTime`, and `ZonedDateTime`.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 40. What is the use of the `LocalDate` class?
+The `LocalDate` class represents a date without time, such as 2023-10-31. It provides methods to manipulate dates and perform date arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 41. What is the use of the `LocalTime` class?
+The `LocalTime` class represents a time without date, such as 10:15:30. It provides methods to manipulate times and perform time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 42. What is the use of the `LocalDateTime` class?
+The `LocalDateTime` class represents a date and time without time zone, such as 2023-10-31T10:15:30. It provides methods to manipulate date-time and perform date-time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 43. What is the use of the `ZonedDateTime` class?
+The `ZonedDateTime` class represents a date and time with a time zone, such as 2023-10-31T10:15:30+01:00[Europe/Paris]. It provides methods to handle time zones and perform date-time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 44. What is the use of the `Instant` class?
+The `Instant` class represents a point in time in UTC, such as 2023-10-31T10:15:30Z. It is useful for timestamping events and measuring time intervals.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 45. What is the use of the `Duration` class?
+The `Duration` class represents a time-based amount of time, such as "34.5 seconds". It is useful for measuring time intervals and performing date-time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 46. What is the use of the `Period` class?
+The `Period` class represents a date-based amount of time, such as "2 years, 3 months, and 4 days". It is useful for manipulating dates and performing date arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 47. What is the use of the `DateTimeFormatter` class?
+The `DateTimeFormatter` class provides a way to format and parse date-time objects. It supports various date-time patterns and locales.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 48. What is the use of the `DateTimeParseException`?
+The `DateTimeParseException` is an exception thrown when a date-time string cannot be parsed according to the specified format.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 49. What is the use of the `ChronoUnit` class?
+The `ChronoUnit` class provides units of time, such as DAYS, HOURS, and MINUTES. It is used to perform date-time arithmetic and measure time intervals.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 50. What is the use of the `ChronoField` class?
+The `ChronoField` class provides fields of date-time, such as YEAR, MONTH_OF_YEAR, and DAY_OF_MONTH. It is used to manipulate date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 51. What is the use of the `TemporalAdjusters` class?
+The `TemporalAdjusters` class provides common date-time adjusters, such as "first day of month" and "last day of year". It is used to manipulate date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 52. What is the use of the `TemporalQueries` class?
+The `TemporalQueries` class provides common queries for date-time objects, such as "zone" and "precision". It is used to extract information from date-time objects.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 53. What is the use of the `TemporalAmount` interface?
+The `TemporalAmount` interface represents an amount of time, such as a `Duration` or `Period`. It is used to perform date-time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
+
+## 54. What is the use of the `TemporalUnit` interface?
+The `TemporalUnit` interface represents a unit of time, such as DAYS, HOURS, and MINUTES. It is used to perform date-time arithmetic.
+
+#### **[⬆ Back to Top](#level--medium)**
+---
