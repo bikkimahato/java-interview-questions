@@ -2240,3 +2240,497 @@ These classes and interfaces are essential tools for developing concurrent appli
 
 #### **[⬆ Back to Top](#level--medium)**
 ---
+
+# Medium Java Interview Questions and Answers
+
+## 1. Explain the concept of memory leaks in Java.
+
+Memory leaks in Java occur when objects that are no longer needed are still referenced, preventing the garbage collector from reclaiming their memory. This can lead to increased memory usage, reduced performance, and eventually, `OutOfMemoryError`.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 2. How do you troubleshoot memory leaks in Java?
+
+To troubleshoot memory leaks in Java:
+1. **Use Profilers**: Tools like VisualVM, JProfiler, or YourKit can help identify memory leaks.
+2. **Heap Dumps**: Analyze heap dumps using tools like Eclipse MAT.
+3. **Logging**: Implement logging to track object creation and destruction.
+4. **Code Review**: Ensure proper release of resources.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 3. What are the different types of class loaders in Java?
+
+Java has several types of class loaders:
+
+| Class Loader        | Description                                                            |
+|---------------------|------------------------------------------------------------------------|
+| **Bootstrap Class Loader** | Loads core Java classes (rt.jar).                                |
+| **Extension Class Loader** | Loads classes from the `ext` directory.                          |
+| **System/Application Class Loader** | Loads classes from the application's classpath.         |
+| **Custom Class Loaders** | User-defined class loaders for specific needs.                     |
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 4. How does the class loading mechanism work in Java?
+
+The class loading mechanism in Java follows the delegation model:
+1. **Bootstrap Class Loader**: Loads core classes.
+2. **Extension Class Loader**: Loads classes from the Java extension directory.
+3. **System/Application Class Loader**: Loads classes from the classpath.
+4. **Custom Class Loaders**: Can be used to load classes from specific locations or formats.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 5. What is the use of the Reflection API in Java?
+
+The Reflection API in Java allows inspection and manipulation of classes, methods, and fields at runtime. It is used for:
+- **Dynamic Class Loading**: Loading classes at runtime.
+- **Method Invocation**: Invoking methods dynamically.
+- **Field Manipulation**: Accessing and modifying fields dynamically.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 6. How do you create thread-safe code in Java?
+
+To create thread-safe code in Java:
+- **Synchronized Blocks/Methods**: Use `synchronized` keyword.
+- **Locks**: Use `java.util.concurrent.locks` package.
+- **Atomic Variables**: Use `java.util.concurrent.atomic` package.
+- **Concurrent Collections**: Use classes from `java.util.concurrent` package.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 7. What is the difference between synchronized and volatile keywords?
+
+| **Synchronized** | **Volatile** |
+|------------------|--------------|
+| Ensures mutual exclusion. | Ensures visibility of changes. |
+| Used to lock methods/blocks. | Used with variables. |
+| More overhead due to locking. | Less overhead. |
+| Prevents thread interference. | Does not prevent thread interference. |
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 8. What are the best practices for exception handling in Java?
+
+Best practices for exception handling in Java:
+- **Catch Specific Exceptions**: Avoid catching generic exceptions.
+- **Use Finally Blocks**: Ensure resources are released.
+- **Avoid Swallowing Exceptions**: Always handle exceptions appropriately.
+- **Provide Meaningful Messages**: Include informative messages in exceptions.
+- **Custom Exceptions**: Use custom exceptions for specific error scenarios.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 9. What is the use of the java.lang.instrument package?
+
+The `java.lang.instrument` package provides services that allow an agent to instrument programs running on the JVM. It is used for:
+- **Profiling**: Monitoring application performance.
+- **Bytecode Manipulation**: Modifying bytecode at runtime.
+- **Instrumentation**: Adding custom behavior to classes.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 10. How do you use the Instrumentation API in Java?
+
+To use the Instrumentation API:
+1. **Create an Agent**: Implement a class with a `premain` method.
+2. **Manifest File**: Specify the agent class in the JAR manifest.
+3. **Attach Agent**: Attach the agent to the JVM using the `-javaagent` option.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+Example of an agent:
+
+```java
+public class MyAgent {
+    public static void premain(String agentArgs, Instrumentation inst) {
+        // Instrumentation code
+    }
+}
+```
+
+Manifest file entry:
+```
+Premain-Class: MyAgent
+```
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 11. Explain the concept of Java Memory Model (JMM).
+
+The Java Memory Model (JMM) defines how threads interact through memory and what behaviors are allowed in concurrent execution. It provides:
+- **Visibility Guarantees**: Ensures changes made by one thread are visible to others.
+- **Ordering Guarantees**: Defines how operations are ordered, ensuring consistency.
+
+**Example**:
+```java
+public class SharedObject {
+    private int counter = 0;
+
+    public synchronized void increment() {
+        counter++;
+    }
+
+    public synchronized int getCounter() {
+        return counter;
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 12. What is the use of the Unsafe class in Java?
+
+The `Unsafe` class provides low-level operations, such as:
+- **Memory Access**: Allocate and deallocate memory.
+- **Atomic Operations**: Perform atomic operations on fields.
+- **Thread Control**: Park and unpark threads.
+
+**Example**:
+```java
+import sun.misc.Unsafe;
+import java.lang.reflect.Field;
+
+public class UnsafeExample {
+    private static final Unsafe unsafe;
+
+    static {
+        try {
+            Field f = Unsafe.class.getDeclaredField("theUnsafe");
+            f.setAccessible(true);
+            unsafe = (Unsafe) f.get(null);
+        } catch (Exception e) {
+            throw new Error(e);
+        }
+    }
+
+    private long value;
+
+    public void setValue(long value) {
+        unsafe.putLong(this, unsafe.objectFieldOffset(UnsafeExample.class.getDeclaredField("value")), value);
+    }
+
+    public long getValue() {
+        return unsafe.getLong(this, unsafe.objectFieldOffset(UnsafeExample.class.getDeclaredField("value")));
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 13. How do you perform dynamic class loading in Java?
+
+Dynamic class loading allows loading classes at runtime using `Class.forName()` or custom class loaders.
+
+**Example**:
+```java
+public class DynamicClassLoading {
+    public static void main(String[] args) {
+        try {
+            Class<?> clazz = Class.forName("com.example.MyClass");
+            Object instance = clazz.getDeclaredConstructor().newInstance();
+            System.out.println("Class loaded and instance created: " + instance);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 14. What is the use of the Proxy class in Java?
+
+The `Proxy` class in Java provides a way to create dynamic proxy classes and instances. It is used for:
+- **Interception**: Intercept method calls on an interface.
+- **Dynamic Behavior**: Add behavior to methods at runtime.
+
+**Example**:
+```java
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+interface MyInterface {
+    void sayHello();
+}
+
+class MyInvocationHandler implements InvocationHandler {
+    private final Object target;
+
+    MyInvocationHandler(Object target) {
+        this.target = target;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("Before method call");
+        Object result = method.invoke(target, args);
+        System.out.println("After method call");
+        return result;
+    }
+}
+
+class MyClass implements MyInterface {
+    public void sayHello() {
+        System.out.println("Hello, World!");
+    }
+}
+
+public class ProxyExample {
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        MyInterface proxyInstance = (MyInterface) Proxy.newProxyInstance(
+                MyClass.class.getClassLoader(),
+                new Class[]{MyInterface.class},
+                new MyInvocationHandler(myClass)
+        );
+        proxyInstance.sayHello();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 15. What is the difference between dynamic proxy and static proxy?
+
+| **Dynamic Proxy** | **Static Proxy** |
+|-------------------|------------------|
+| Created at runtime. | Created at compile time. |
+| Uses `java.lang.reflect.Proxy`. | Uses a manually written class. |
+| Flexible, can proxy any interface. | Limited to specific interfaces. |
+| Less boilerplate code. | More boilerplate code. |
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 16. How do you implement dynamic proxies in Java?
+
+Dynamic proxies are implemented using `java.lang.reflect.Proxy` and `InvocationHandler`.
+
+**Example**:
+```java
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+interface Service {
+    void perform();
+}
+
+class ServiceImpl implements Service {
+    public void perform() {
+        System.out.println("Performing service...");
+    }
+}
+
+class ServiceInvocationHandler implements InvocationHandler {
+    private final Object target;
+
+    ServiceInvocationHandler(Object target) {
+        this.target = target;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("Before method call");
+        Object result = method.invoke(target, args);
+        System.out.println("After method call");
+        return result;
+    }
+}
+
+public class DynamicProxyExample {
+    public static void main(String[] args) {
+        ServiceImpl service = new ServiceImpl();
+        Service proxyInstance = (Service) Proxy.newProxyInstance(
+                ServiceImpl.class.getClassLoader(),
+                new Class[]{Service.class},
+                new ServiceInvocationHandler(service)
+        );
+        proxyInstance.perform();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 17. What is the use of the java.lang.invoke package?
+
+The `java.lang.invoke` package provides low-level primitives for performing dynamic operations, including:
+- **Method Handles**: Dynamically invoke methods.
+- **Lambda Metafactory**: Create lambda expressions dynamically.
+- **Call Site**: Optimize method calls.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 18. What is the use of the MethodHandles class?
+
+The `MethodHandles` class provides factory methods for creating method handles, which are used to invoke methods dynamically.
+
+**Example**:
+```java
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.MethodType;
+
+public class MethodHandlesExample {
+    public static void main(String[] args) throws Throwable {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
+        MethodType methodType = MethodType.methodType(void.class);
+        MethodHandle methodHandle = lookup.findVirtual(MethodHandlesExample.class, "sayHello", methodType);
+        MethodHandlesExample example = new MethodHandlesExample();
+        methodHandle.invoke(example);
+    }
+
+    public void sayHello() {
+        System.out.println("Hello from MethodHandles!");
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 19. How do you perform bytecode manipulation in Java?
+
+Bytecode manipulation can be performed using libraries like ASM, Javassist, or ByteBuddy. These libraries allow modifying the bytecode of classes at runtime or compile time.
+
+**Example with ASM**:
+```java
+import org.objectweb.asm.*;
+
+public class BytecodeManipulationExample {
+    public static void main(String[] args) throws Exception {
+        ClassReader classReader = new ClassReader("com.example.MyClass");
+        ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);
+        classReader.accept(new ClassVisitor(Opcodes.ASM7, classWriter) {
+            @Override
+            public void visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
+                if (name.equals("myMethod")) {
+                    System.out.println("Modifying method: " + name);
+                }
+                super.visitMethod(access, name, descriptor, signature, exceptions);
+            }
+        }, 0);
+        byte[] modifiedClass = classWriter.toByteArray();
+        // Load the modified class and use it
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 20. What is the use of the ASM library in Java?
+
+The ASM library is used for:
+- **Bytecode Analysis**: Reading and analyzing bytecode.
+- **Bytecode Manipulation**: Modifying bytecode.
+- **Dynamic Class Generation**: Creating classes at runtime.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 21. How do you perform code generation in Java?
+
+Code generation can be performed using libraries like Javassist, ASM, or tools like annotation processors.
+
+**Example with Javassist**:
+```java
+import javassist.*;
+
+public class CodeGenerationExample {
+    public static void main(String[] args) throws Exception {
+        ClassPool pool = ClassPool.getDefault();
+        CtClass cc = pool.makeClass("com.example.GeneratedClass");
+        CtMethod method = CtNewMethod.make("public void sayHello() { System.out.println(\"Hello from generated class!\"); }", cc);
+        cc.addMethod(method);
+        Class<?> generatedClass = cc.toClass();
+        Object instance = generatedClass.getDeclaredConstructor().newInstance();
+        generatedClass.getMethod("sayHello").invoke(instance);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 22. What is the use of the Javassist library in Java?
+
+Javassist is used for:
+- **Bytecode Manipulation**: Modifying existing classes or creating new ones.
+- **Dynamic Proxy Generation**: Creating proxies for classes.
+- **Code Injection**: Adding code to methods.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 23. How do you use the Java Compiler API?
+
+The Java Compiler API (`javax.tools`) allows programmatic compilation of Java source files.
+
+**Example**:
+```java
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+import java.io.File;
+
+public class CompilerAPIExample {
+    public static void main(String[] args) {
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        int result = compiler.run(null, null, null, "src/com/example/MyClass.java");
+        System.out.println("Compilation result: " + result);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 24. What is the use of the javax.tools package?
+
+The `javax.tools` package provides interfaces for tools like compilers and documentation generators. It is used for:
+- **Compilation**: Compiling Java source files programmatically.
+- **Documentation**: Generating documentation from source files.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 25. How do you perform annotation processing in Java?
+
+Annotation processing is performed using the `javax.annotation.processing` package. Create an annotation processor by extending `AbstractProcessor`.
+
+**Example**:
+```java
+import javax.annotation.processing.*;
+import javax.lang.model.SourceVersion;
+import javax.lang.model.element.Element;
+import javax.lang.model.element.TypeElement;
+import java.util.Set;
+
+@SupportedAnnotationTypes("com.example.MyAnnotation")
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
+public class MyAnnotationProcessor extends AbstractProcessor {
+
+    @Override
+    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+        for (Element element : roundEnv.getElementsAnnotatedWith(MyAnnotation.class)) {
+            // Processing logic
+        }
+        return true;
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
