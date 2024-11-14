@@ -251,6 +251,111 @@ Happy coding! If you find this repository helpful, please give it a star ⭐ and
 | 99  | [What is the use of the AtomicIntegerArray class?](#99-what-is-the-use-of-the-atomicintegerarray-class) |
 | 100 | [What is the use of the AtomicLongArray class?](#100-what-is-the-use-of-the-atomiclongarray-class) |
 
+### Table of Contents
+### Level : Hard
+| No. | Questions |
+| --- | --------- |
+| 1   | [Explain the concept of memory leaks in Java.](#1-explain-the-concept-of-memory-leaks-in-java) |
+| 2   | [How do you troubleshoot memory leaks in Java?](#2-how-do-you-troubleshoot-memory-leaks-in-java) |
+| 3   | [What are the different types of class loaders in Java?](#3-what-are-the-different-types-of-class-loaders-in-java) |
+| 4   | [How does the class loading mechanism work in Java?](#4-how-does-the-class-loading-mechanism-work-in-java) |
+| 5   | [What is the use of the Reflection API in Java?](#5-what-is-the-use-of-the-reflection-api-in-java) |
+| 6   | [How do you create thread-safe code in Java?](#6-how-do-you-create-thread-safe-code-in-java) |
+| 7   | [What is the difference between synchronized and volatile keywords?](#7-what-is-the-difference-between-synchronized-and-volatile-keywords) |
+| 8   | [What are the best practices for exception handling in Java?](#8-what-are-the-best-practices-for-exception-handling-in-java) |
+| 9   | [What is the use of the java.lang.instrument package?](#9-what-is-the-use-of-the-javalanginstrument-package) |
+| 10  | [How do you use the Instrumentation API in Java?](#10-how-do-you-use-the-instrumentation-api-in-java) |
+| 11  | [Explain the concept of Java Memory Model (JMM).](#11-explain-the-concept-of-java-memory-model-jmm) |
+| 12  | [What is the use of the Unsafe class in Java?](#12-what-is-the-use-of-the-unsafe-class-in-java) |
+| 13  | [How do you perform dynamic class loading in Java?](#13-how-do-you-perform-dynamic-class-loading-in-java) |
+| 14  | [What is the use of the Proxy class in Java?](#14-what-is-the-use-of-the-proxy-class-in-java) |
+| 15  | [What is the difference between dynamic proxy and static proxy?](#15-what-is-the-difference-between-dynamic-proxy-and-static-proxy) |
+| 16  | [How do you implement dynamic proxies in Java?](#16-how-do-you-implement-dynamic-proxies-in-java) |
+| 17  | [What is the use of the java.lang.invoke package?](#17-what-is-the-use-of-the-javalanginvoke-package) |
+| 18  | [What is the use of the MethodHandles class?](#18-what-is-the-use-of-the-methodhandles-class) |
+| 19  | [How do you perform bytecode manipulation in Java?](#19-how-do-you-perform-bytecode-manipulation-in-java) |
+| 20  | [What is the use of the ASM library in Java?](#20-what-is-the-use-of-the-asm-library-in-java) |
+| 21  | [How do you perform code generation in Java?](#21-how-do-you-perform-code-generation-in-java) |
+| 22  | [What is the use of the Javassist library in Java?](#22-what-is-the-use-of-the-javassist-library-in-java) |
+| 23  | [How do you use the Java Compiler API?](#23-how-do-you-use-the-java-compiler-api) |
+| 24  | [What is the use of the javax.tools package?](#24-what-is-the-use-of-the-javaxtools-package) |
+| 25  | [How do you perform annotation processing in Java?](#25-how-do-you-perform-annotation-processing-in-java) |
+| 26  | [What is the use of the javax.annotation.processing package?](#26-what-is-the-use-of-the-javaxannotationprocessing-package) |
+| 27  | [How do you create custom annotations in Java?](#27-how-do-you-create-custom-annotations-in-java) |
+| 28  | [What is the use of the javax.inject package?](#28-what-is-the-use-of-the-javaxinject-package) |
+| 29  | [How do you perform dependency injection in Java?](#29-how-do-you-perform-dependency-injection-in-java) |
+| 30  | [What is the difference between constructor injection and setter injection?](#30-what-is-the-difference-between-constructor-injection-and-setter-injection) |
+| 31  | [What is the use of the javax.enterprise.context package?](#31-what-is-the-use-of-the-javaxenterprisecontext-package) |
+| 32  | [What is the use of the javax.enterprise.inject package?](#32-what-is-the-use-of-the-javaxenterpriseinject-package) |
+| 33  | [What is the use of the javax.enterprise.event package?](#33-what-is-the-use-of-the-javaxenterpriseevent-package) |
+| 34  | [How do you use the CDI (Contexts and Dependency Injection) in Java?](#34-how-do-you-use-the-cdi-contexts-and-dependency-injection-in-java) |
+| 35  | [What is the use of the javax.enterprise.inject.spi package?](#35-what-is-the-use-of-the-javaxenterpriseinjectspi-package) |
+| 36  | [How do you use the Bean Validation API in Java?](#36-how-do-you-use-the-bean-validation-api-in-java) |
+| 37  | [What is the use of the javax.validation package?](#37-what-is-the-use-of-the-javaxvalidation-package) |
+| 38  | [How do you create custom validators in Java?](#38-how-do-you-create-custom-validators-in-java) |
+| 39  | [How do you use the JPA (Java Persistence API) in Java?](#39-how-do-you-use-the-jpa-java-persistence-api-in-java) |
+| 40  | [What is the use of the javax.persistence package?](#40-what-is-the-use-of-the-javaxpersistence-package) |
+| 41  | [How do you perform object-relational mapping in Java?](#41-how-do-you-perform-object-relational-mapping-in-java) |
+| 42  | [What is the use of the Hibernate framework in Java?](#42-what-is-the-use-of-the-hibernate-framework-in-java) |
+| 43  | [How do you use the JTA (Java Transaction API) in Java?](#43-how-do-you-use-the-jta-java-transaction-api-in-java) |
+| 44  | [What is the use of the javax.transaction package?](#44-what-is-the-use-of-the-javaxtransaction-package) |
+| 45  | [How do you perform distributed transactions in Java?](#45-how-do-you-perform-distributed-transactions-in-java) |
+| 46  | [What is the use of the XADataSource interface?](#46-what-is-the-use-of-the-xadatasource-interface) |
+| 47  | [How do you use the JDBC (Java Database Connectivity) API in Java?](#47-how-do-you-use-the-jdbc-java-database-connectivity-api-in-java) |
+| 48  | [What is the use of the java.sql package?](#48-what-is-the-use-of-the-javasql-package) |
+| 49  | [How do you perform connection pooling in Java?](#49-how-do-you-perform-connection-pooling-in-java) |
+| 50  | [What is the use of the javax.sql package?](#50-what-is-the-use-of-the-javaxsql-package) |
+| 51  | [How do you use the Java EE (Enterprise Edition) platform in Java?](#51-how-do-you-use-the-java-ee-enterprise-edition-platform-in-java) |
+| 52  | [What is the use of the javax.ejb package?](#52-what-is-the-use-of-the-javaxejb-package) |
+| 53  | [How do you create enterprise beans in Java?](#53-how-do-you-create-enterprise-beans-in-java) |
+| 54  | [What is the use of the javax.jms package?](#54-what-is-the-use-of-the-javaxjms-package) |
+| 55  | [How do you use the Java Message Service (JMS) in Java?](#55-how-do-you-use-the-java-message-service-jms-in-java) |
+| 56  | [What is the use of the javax.mail package?](#56-what-is-the-use-of-the-javaxmail-package) |
+| 57  | [How do you send email using the JavaMail API?](#57-how-do-you-send-email-using-the-javamail-api) |
+| 58  | [What is the use of the javax.ws.rs package?](#58-what-is-the-use-of-the-javaxwsrs-package) |
+| 59  | [How do you create RESTful web services in Java?](#59-how-do-you-create-restful-web-services-in-java) |
+| 60  | [What is the use of the JAX-RS (Java API for RESTful Web Services) in Java?](#60-what-is-the-use-of-the-jax-rs-java-api-for-restful-web-services-in-java) |
+| 61  | [How do you use the JAX-WS (Java API for XML Web Services) in Java?](#61-how-do-you-use-the-jax-ws-java-api-for-xml-web-services-in-java) |
+| 62  | [What is the use of the javax.xml.ws package?](#62-what-is-the-use-of-the-javaxxmlws-package) |
+| 63  | [How do you create SOAP web services in Java?](#63-how-do-you-create-soap-web-services-in-java) |
+| 64  | [What is the use of the JAXB (Java Architecture for XML Binding) in Java?](#64-what-is-the-use-of-the-jaxb-java-architecture-for-xml-binding-in-java) |
+| 65  | [How do you perform XML binding in Java?](#65-how-do-you-perform-xml-binding-in-java) |
+| 66  | [What is the use of the javax.xml.bind package?](#66-what-is-the-use-of-the-javaxxmlbind-package) |
+| 67  | [How do you use the JavaFX platform in Java?](#67-how-do-you-use-the-javafx-platform-in-java) |
+| 68  | [What is the use of the javafx.application package?](#68-what-is-the-use-of-the-javafxapplication-package) |
+| 69  | [How do you create JavaFX applications in Java?](#69-how-do-you-create-javafx-applications-in-java) |
+| 70  | [What is the use of the javafx.scene package?](#70-what-is-the-use-of-the-javafxscene-package) |
+| 71  | [How do you create graphical user interfaces using JavaFX?](#71-how-do-you-create-graphical-user-interfaces-using-javafx) |
+| 72  | [What is the use of the javafx.stage package?](#72-what-is-the-use-of-the-javafxstage-package) |
+| 73  | [How do you use the Java 2D API in Java?](#73-how-do-you-use-the-java-2d-api-in-java) |
+| 74  | [What is the use of the java.awt package?](#74-what-is-the-use-of-the-javaawt-package) |
+| 75  | [How do you perform custom painting in Java?](#75-how-do-you-perform-custom-painting-in-java) |
+| 76  | [What is the use of the javax.swing package?](#76-what-is-the-use-of-the-javaxswing-package) |
+| 77  | [How do you create Swing applications in Java?](#77-how-do-you-create-swing-applications-in-java) |
+| 78  | [What is the use of the javax.swing.event package?](#78-what-is-the-use-of-the-javaxswingevent-package) |
+| 79  | [How do you handle events in Swing applications?](#79-how-do-you-handle-events-in-swing-applications) |
+| 80  | [What is the use of the javax.swing.plaf package?](#80-what-is-the-use-of-the-javaxswingplaf-package) |
+| 81  | [How do you customize the look and feel of Swing applications?](#81-how-do-you-customize-the-look-and-feel-of-swing-applications) |
+| 82  | [What is the use of the javax.swing.table package?](#82-what-is-the-use-of-the-javaxswingtable-package) |
+| 83  | [How do you create and manipulate tables in Swing applications?](#83-how-do-you-create-and-manipulate-tables-in-swing-applications) |
+| 84  | [What is the use of the javax.swing.tree package?](#84-what-is-the-use-of-the-javaxswingtree-package) |
+| 85  | [How do you create and manipulate trees in Swing applications?](#85-how-do-you-create-and-manipulate-trees-in-swing-applications) |
+| 86  | [What is the use of the javax.swing.text package?](#86-what-is-the-use-of-the-javaxswingtext-package) |
+| 87  | [How do you create and manipulate text components in Swing applications?](#87-how-do-you-create-and-manipulate-text-components-in-swing-applications) |
+| 88  | [What is the use of the javax.swing.undo package?](#88-what-is-the-use-of-the-javaxswingundo-package) |
+| 89  | [How do you implement undo and redo functionality in Swing applications?](#89-how-do-you-implement-undo-and-redo-functionality-in-swing-applications) |
+| 90  | [What is the use of the javax.swing.filechooser package?](#90-what-is-the-use-of-the-javaxswingfilechooser-package) |
+| 91  | [How do you use the JFileChooser component in Swing applications?](#91-how-do-you-use-the-jfilechooser-component-in-swing-applications) |
+| 92  | [What is the use of the javax.swing.border package?](#92-what-is-the-use-of-the-javaxswingborder-package) |
+| 93  | [How do you create and manipulate borders in Swing applications?](#93-how-do-you-create-and-manipulate-borders-in-swing-applications) |
+| 94  | [What is the use of the javax.swing.colorchooser package?](#94-what-is-the-use-of-the-javaxswingcolorchooser-package) |
+| 95  | [How do you use the JColorChooser component in Swing applications?](#95-how-do-you-use-the-jcolorchooser-component-in-swing-applications) |
+| 96  | [What is the use of the javax.swing.text.html package?](#96-what-is-the-use-of-the-javaxswingtexthtml-package) |
+| 97  | [How do you create and manipulate HTML text components in Swing applications?](#97-how-do-you-create-and-manipulate-html-text-components-in-swing-applications) |
+| 98  | [What is the use of the javax.swing.text.html.parser package?](#98-what-is-the-use-of-the-javaxswingtexthtmlparser-package) |
+| 99  | [How do you parse HTML documents in Swing applications?](#99-how-do-you-parse-html-documents-in-swing-applications) |
+| 100 | [What is the use of the javax.swing.text.rtf package?](#100-what-is-the-use-of-the-javaxswingtextrtf-package) |
+
 
 # Easy Java Interview Questions and Answers
 ## 1. What is Java?
