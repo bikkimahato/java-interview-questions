@@ -2734,3 +2734,531 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 ```
 #### **[⬆ Back to Top](#level--hard)**
 ---
+
+## 26. What is the use of the javax.annotation.processing package?
+
+The `javax.annotation.processing` package provides tools for processing annotations at compile time. It is used for:
+- **Custom Annotation Processing**: Creating custom annotation processors.
+- **Code Generation**: Generating code based on annotations.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 27. How do you use the Java Reflection API?
+
+The Java Reflection API allows inspecting and manipulating classes, methods, fields, and constructors at runtime.
+
+**Example**:
+```java
+import java.lang.reflect.Method;
+
+public class ReflectionExample {
+    public static void main(String[] args) throws Exception {
+        Class<?> clazz = Class.forName("com.example.MyClass");
+        Object instance = clazz.getDeclaredConstructor().newInstance();
+        Method method = clazz.getDeclaredMethod("myMethod");
+        method.invoke(instance);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 28. What is the use of the java.lang.reflect package?
+
+The `java.lang.reflect` package provides classes and interfaces for obtaining reflective information about classes and objects. This includes:
+- **Class**: Represents classes and interfaces.
+- **Method**: Represents methods.
+- **Field**: Represents fields.
+- **Constructor**: Represents constructors.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 29. How do you perform dependency injection in Java?
+
+Dependency Injection (DI) can be performed using frameworks like Spring or CDI, or manually using constructors or setters.
+
+**Example with Spring**:
+```java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyService {
+    public void performService() {
+        System.out.println("Service performed");
+    }
+}
+
+@Component
+public class MyComponent {
+    private final MyService myService;
+
+    public MyComponent(MyService myService) {
+        this.myService = myService;
+    }
+
+    public void execute() {
+        myService.performService();
+    }
+}
+
+public class DependencyInjectionExample {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.example");
+        MyComponent component = context.getBean(MyComponent.class);
+        component.execute();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 30. What is the use of the Spring framework in Java?
+
+The Spring framework is used for:
+- **Dependency Injection**: Managing dependencies and lifecycle of beans.
+- **Aspect-Oriented Programming (AOP)**: Adding cross-cutting concerns.
+- **Data Access**: Simplifying database access.
+- **Web Applications**: Building web applications with Spring MVC.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 31. How do you perform aspect-oriented programming in Java?
+
+Aspect-Oriented Programming (AOP) can be performed using frameworks like Spring AOP or AspectJ.
+
+**Example with Spring AOP**:
+```java
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class LoggingAspect {
+    @Before("execution(* com.example.MyService.performService(..))")
+    public void logBefore() {
+        System.out.println("Before method execution");
+    }
+}
+
+@Component
+public class MyService {
+    public void performService() {
+        System.out.println("Service performed");
+    }
+}
+
+public class AOPExample {
+    public static void main(String[] args) {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.example");
+        MyService myService = context.getBean(MyService.class);
+        myService.performService();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 32. What is the use of the AspectJ library in Java?
+
+AspectJ is used for:
+- **Pure AOP**: Providing a complete and powerful AOP solution.
+- **Compile-Time Weaving**: Adding aspects during compilation.
+- **Load-Time Weaving**: Adding aspects during class loading.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 33. How do you use the Java Persistence API (JPA)?
+
+JPA is used for object-relational mapping (ORM) to manage relational data in Java applications.
+
+**Example with Hibernate**:
+```java
+import javax.persistence.*;
+
+@Entity
+public class MyEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+
+    // Getters and setters
+}
+
+public class JPAExample {
+    public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        
+        MyEntity entity = new MyEntity();
+        entity.setName("Test Entity");
+        em.persist(entity);
+        
+        em.getTransaction().commit();
+        
+        em.close();
+        emf.close();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 34. What is the use of the javax.persistence package?
+
+The `javax.persistence` package provides classes and interfaces for the Java Persistence API (JPA). It is used for:
+- **Entity Management**: Managing lifecycle of entities.
+- **Querying**: Creating and executing queries.
+- **Transaction Management**: Managing transactions.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 35. How do you perform object-relational mapping in Java?
+
+Object-relational mapping (ORM) can be performed using JPA implementations like Hibernate, EclipseLink, or OpenJPA.
+
+**Example with Hibernate**:
+```java
+import javax.persistence.*;
+
+@Entity
+public class MyEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+
+    // Getters and setters
+}
+
+public class ORMExample {
+    public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        
+        MyEntity entity = new MyEntity();
+        entity.setName("Test Entity");
+        em.persist(entity);
+        
+        em.getTransaction().commit();
+        
+        em.close();
+        emf.close();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 36. What is the use of the Hibernate framework in Java?
+
+Hibernate is used for:
+- **ORM**: Mapping Java objects to database tables.
+- **Data Access**: Simplifying database access.
+- **Transaction Management**: Managing transactions.
+- **Caching**: Improving performance with caching.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 37. How do you use the Java Servlet API?
+
+The Java Servlet API is used for developing web applications by handling HTTP requests and responses.
+
+**Example**:
+```java
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.IOException;
+
+public class MyServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        response.getWriter().println("<h1>Hello, Servlet!</h1>");
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 38. What is the use of the javax.servlet package?
+
+The `javax.servlet` package provides classes and interfaces for:
+- **Servlets**: Handling HTTP requests and responses.
+- **Filters**: Intercepting requests and responses.
+- **Listeners**: Monitoring events in a web application.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 39. How do you use the JavaServer Pages (JSP) technology?
+
+JSP technology is used for creating dynamic web content by embedding Java code in HTML pages.
+
+**Example**:
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Hello JSP</title>
+</head>
+<body>
+<%
+    String name = request.getParameter("name");
+    if (name == null) {
+        name = "World";
+    }
+%>
+<h1>Hello, <%= name %>!</h1>
+</body>
+</html>
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 40. What is the use of the javax.servlet.jsp package?
+
+The `javax.servlet.jsp` package provides classes and interfaces for JavaServer Pages (JSP). It is used for:
+- **JSP Pages**: Creating JSP pages.
+- **JSP Tags**: Defining custom tags.
+- **JSP Actions**: Performing actions in JSP pages.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 41. How do you perform unit testing in Java?
+
+Unit testing in Java can be performed using frameworks like JUnit or TestNG.
+
+**Example with JUnit**:
+```java
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class MyServiceTest {
+
+    @Test
+    public void testPerformService() {
+        MyService myService = new MyService();
+        String result = myService.performService();
+        Assertions.assertEquals("Service performed", result);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 42. What is the use of the JUnit framework in Java?
+
+JUnit is used for:
+- **Unit Testing**: Writing and running automated tests.
+- **Assertions**: Checking expected results.
+- **Test Fixtures**: Setting up and tearing down tests.
+- **Test Runners**: Executing tests and generating reports.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 43. How do you perform integration testing in Java?
+
+Integration testing in Java can be performed using frameworks like Spring Test, Arquillian, or by writing custom integration tests.
+
+**Example with Spring Test**:
+```java
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import static org.assertj.core.api.Assertions.assertThat;
+
+@SpringBootTest
+public class MyServiceIntegrationTest {
+
+    @Autowired
+    private MyService myService;
+
+    @Test
+    public void testPerformService() {
+        String result = myService.performService();
+        assertThat(result).isEqualTo("Service performed");
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 44. What is the use of the Mockito framework in Java?
+
+Mockito is used for:
+- **Mocking**: Creating mock objects.
+- **Stubbing**: Defining behavior of mock objects.
+- **Verification**: Checking interactions with mock objects.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 45. How do you use the Mockito framework?
+
+Mockito can be used to create mock objects and define their behavior for unit testing.
+
+**Example**:
+```java
+import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.Test;
+
+public class MyServiceTest {
+
+    @Test
+    public void testPerformService() {
+        MyRepository mockRepository = mock(MyRepository.class);
+        when(mockRepository.getData()).thenReturn("Mock Data");
+
+        MyService myService = new MyService(mockRepository);
+        String result = myService.performService();
+
+        assertEquals("Service performed with Mock Data", result);
+        verify(mockRepository).getData();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 46. What is the use of the TestNG framework in Java?
+
+TestNG is used for:
+- **Unit Testing**: Writing and running automated tests.
+- **Integration Testing**: Performing integration tests.
+- **Configuration**: Setting up and tearing down tests with annotations.
+- **Parallel Testing**: Running tests in parallel.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 47. How do you perform behavior-driven development (BDD) in Java?
+
+BDD in Java can be performed using frameworks like Cucumber or JBehave.
+
+**Example with Cucumber**:
+1. **Feature file** (`src/test/resources/features/myFeature.feature`):
+    ```gherkin
+    Feature: My feature
+    Scenario: Perform service
+        Given the service is available
+        When I perform the service
+        Then I should get the response "Service performed"
+    ```
+
+2. **Step Definitions** (`src/test/java/com/example/StepDefinitions.java`):
+    ```java
+    import io.cucumber.java.en.Given;
+    import io.cucumber.java.en.When;
+    import io.cucumber.java.en.Then;
+    import static org.junit.jupiter.api.Assertions.assertEquals;
+
+    public class StepDefinitions {
+
+        private MyService myService;
+        private String response;
+
+        @Given("the service is available")
+        public void the_service_is_available() {
+            myService = new MyService();
+        }
+
+        @When("I perform the service")
+        public void i_perform_the_service() {
+            response = myService.performService();
+        }
+
+        @Then("I should get the response {string}")
+        public void i_should_get_the_response(String expectedResponse) {
+            assertEquals(expectedResponse, response);
+        }
+    }
+    ```
+
+3. **Runner Class** (`src/test/java/com/example/CucumberTest.java`):
+    ```java
+    import org.junit.platform.suite.api.IncludeEngines;
+    import org.junit.platform.suite.api.SelectClasspathResource;
+    import org.junit.platform.suite.api.Suite;
+
+    @Suite
+    @IncludeEngines("cucumber")
+    @SelectClasspathResource("features")
+    public class CucumberTest {
+    }
+    ```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 48. What is the use of the Cucumber framework in Java?
+
+Cucumber is used for:
+- **BDD**: Writing tests in a human-readable format using Gherkin language.
+- **Automated Testing**: Automating tests based on feature files.
+- **Integration**: Integrating with testing frameworks like JUnit or TestNG.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 49. How do you perform closed-box testing in Java?
+
+Closed-box testing can be performed by writing tests without knowing the internal structure of the code. This involves testing the functionality of the application based on requirements and specifications.
+
+**Example**:
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class ClosedBoxTest {
+
+    @Test
+    public void testCalculateSum() {
+        MyService myService = new MyService();
+        int result = myService.calculateSum(5, 3);
+        assertEquals(8, result);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 50. How do you perform open-box testing in Java?
+
+Open-box testing involves writing tests with knowledge of the internal structure of the code. This includes testing private methods, internal states, and interactions between components.
+
+**Example**:
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.lang.reflect.Method;
+
+public class OpenBoxTest {
+
+    @Test
+    public void testPrivateMethod() throws Exception {
+        MyService myService = new MyService();
+        Method method = MyService.class.getDeclaredMethod("privateMethod", int.class);
+        method.setAccessible(true);
+        int result = (int) method.invoke(myService, 5);
+        assertEquals(25, result);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
