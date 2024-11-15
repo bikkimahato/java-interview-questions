@@ -3262,3 +3262,705 @@ public class OpenBoxTest {
 ```
 #### **[⬆ Back to Top](#level--hard)**
 ---
+
+## 51. What is the use of the Java Message Service (JMS) API?
+
+The JMS API is used for:
+- **Messaging**: Sending and receiving messages between distributed systems.
+- **Asynchronous Communication**: Enabling asynchronous communication between components.
+- **Message Types**: Supporting various message types like TextMessage, ObjectMessage, BytesMessage, etc.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 52. How do you use the JMS API in Java?
+
+The JMS API can be used to create, send, receive, and read messages.
+
+**Example**:
+```java
+import javax.jms.*;
+import javax.naming.InitialContext;
+
+public class JMSExample {
+    public static void main(String[] args) throws Exception {
+        InitialContext ctx = new InitialContext();
+        ConnectionFactory factory = (ConnectionFactory) ctx.lookup("ConnectionFactory");
+        Queue queue = (Queue) ctx.lookup("queue/myQueue");
+
+        try (Connection connection = factory.createConnection()) {
+            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+            MessageProducer producer = session.createProducer(queue);
+            TextMessage message = session.createTextMessage("Hello, JMS!");
+
+            producer.send(message);
+            System.out.println("Message sent: " + message.getText());
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 53. What is the use of the Java Naming and Directory Interface (JNDI) API?
+
+The JNDI API is used for:
+- **Naming Services**: Accessing naming services like DNS.
+- **Directory Services**: Accessing directory services like LDAP.
+- **Resource Lookup**: Looking up resources like EJBs, data sources, JMS queues, etc.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 54. How do you use the JNDI API in Java?
+
+The JNDI API can be used to look up resources and interact with naming and directory services.
+
+**Example**:
+```java
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+import java.sql.Connection;
+
+public class JNDIExample {
+    public static void main(String[] args) throws Exception {
+        InitialContext ctx = new InitialContext();
+        DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/MyDataSource");
+
+        try (Connection connection = ds.getConnection()) {
+            System.out.println("Connection established: " + connection);
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 55. What is the use of the Java Management Extensions (JMX) API?
+
+The JMX API is used for:
+- **Monitoring**: Monitoring and managing Java applications.
+- **Management**: Managing resources like applications, devices, and services.
+- **MBeans**: Exposing management interfaces as MBeans (Managed Beans).
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 56. How do you use the JMX API in Java?
+
+The JMX API can be used to create MBeans and register them with an MBean server for management.
+
+**Example**:
+```java
+import javax.management.*;
+import java.lang.management.ManagementFactory;
+
+public class JMXExample {
+    public static void main(String[] args) throws Exception {
+        MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+
+        ObjectName name = new ObjectName("com.example:type=Hello");
+        Hello mbean = new Hello();
+        mbs.registerMBean(mbean, name);
+
+        System.out.println("MBean registered. Press Enter to continue...");
+        System.in.read();
+    }
+
+    public interface HelloMBean {
+        void sayHello();
+        int add(int x, int y);
+    }
+
+    public static class Hello implements HelloMBean {
+        public void sayHello() {
+            System.out.println("Hello, JMX!");
+        }
+
+        public int add(int x, int y) {
+            return x + y;
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 57. What is the use of the Java Authentication and Authorization Service (JAAS) API?
+
+The JAAS API is used for:
+- **Authentication**: Verifying the identity of users.
+- **Authorization**: Controlling access to resources based on user roles.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 58. How do you use the JAAS API in Java?
+
+The JAAS API can be used to perform authentication and authorization.
+
+**Example**:
+```java
+import javax.security.auth.login.LoginContext;
+import javax.security.auth.login.LoginException;
+
+public class JAASExample {
+    public static void main(String[] args) {
+        try {
+            LoginContext lc = new LoginContext("MyLoginModule");
+            lc.login();
+            System.out.println("Authentication successful");
+        } catch (LoginException e) {
+            System.out.println("Authentication failed: " + e.getMessage());
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 59. What is the use of the Java Cryptography Architecture (JCA) API?
+
+The JCA API is used for:
+- **Cryptography**: Providing cryptographic operations like encryption, decryption, hashing, and key management.
+- **Security**: Ensuring data integrity and confidentiality.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 60. How do you use the JCA API in Java?
+
+The JCA API can be used to perform cryptographic operations.
+
+**Example**:
+```java
+import java.security.MessageDigest;
+
+public class JCAExample {
+    public static void main(String[] args) throws Exception {
+        String data = "Hello, JCA!";
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+        byte[] hash = md.digest(data.getBytes());
+        System.out.println("Hash: " + bytesToHex(hash));
+    }
+
+    private static String bytesToHex(byte[] bytes) {
+        StringBuilder sb = new StringBuilder();
+        for (byte b : bytes) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 61. What is the use of the Java Secure Socket Extension (JSSE) API?
+
+The JSSE API is used for:
+- **Secure Communication**: Enabling secure communication over networks using SSL/TLS.
+- **Encryption**: Encrypting data transmitted over the network.
+- **Authentication**: Authenticating communication endpoints.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 62. How do you use the JSSE API in Java?
+
+The JSSE API can be used to create secure sockets and enable SSL/TLS communication.
+
+**Example**:
+```java
+import javax.net.ssl.HttpsURLConnection;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+public class JSSEExample {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("https://www.example.com");
+        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 63. What is the use of the Java Transaction API (JTA)?
+
+JTA is used for:
+- **Transaction Management**: Managing transactions across multiple resources.
+- **Distributed Transactions**: Coordinating transactions in distributed systems.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 64. How do you use the JTA in Java?
+
+JTA can be used to manage transactions programmatically or declaratively.
+
+**Example**:
+```java
+import javax.transaction.UserTransaction;
+import javax.naming.InitialContext;
+
+public class JTAExample {
+    public static void main(String[] args) throws Exception {
+        InitialContext ctx = new InitialContext();
+        UserTransaction utx = (UserTransaction) ctx.lookup("java:comp/UserTransaction");
+
+        try {
+            utx.begin();
+            // Perform transactional operations
+            utx.commit();
+        } catch (Exception e) {
+            utx.rollback();
+            throw e;
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 65. What is the use of the JavaMail API?
+
+The JavaMail API is used for:
+- **Email Communication**: Sending and receiving emails.
+- **Email Protocols**: Supporting protocols like SMTP, IMAP, and POP3.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 66. How do you use the JavaMail API in Java?
+
+The JavaMail API can be used to send and receive emails.
+
+**Example**:
+```java
+import javax.mail.*;
+import javax.mail.internet.*;
+import java.util.Properties;
+
+public class JavaMailExample {
+    public static void main(String[] args) throws Exception {
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.example.com");
+        props.put("mail.smtp.port", "25");
+
+        Session session = Session.getInstance(props);
+
+        Message message = new MimeMessage(session);
+        message.setFrom(new InternetAddress("sender@example.com"));
+        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("recipient@example.com"));
+        message.setSubject("Test Email");
+        message.setText("Hello, JavaMail!");
+
+        Transport.send(message);
+        System.out.println("Email sent successfully");
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 67. What is the use of the Java API for RESTful Web Services (JAX-RS)?
+
+JAX-RS is used for:
+- **RESTful Services**: Creating RESTful web services.
+- **Annotations**: Using annotations to define RESTful resources.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 68. How do you use the JAX-RS API in Java?
+
+The JAX-RS API can be used to create RESTful web services.
+
+**Example**:
+```java
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Application;
+import java.util.HashSet;
+import java.util.Set;
+
+@Path("/hello")
+public class HelloResource {
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String sayHello() {
+        return "Hello, JAX-RS!";
+    }
+}
+
+@ApplicationPath("/api")
+public class MyApplication extends Application {
+    @Override
+    public Set<Class<?>> getClasses() {
+        Set<Class<?>> classes = new HashSet<>();
+        classes.add(HelloResource.class);
+        return classes;
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 69. What is the use of the Java API for XML Web Services (JAX-WS)?
+
+JAX-WS is used for:
+- **SOAP Services**: Creating SOAP-based web services.
+- **Annotations**: Using annotations to define SOAP endpoints.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 70. How do you use the JAX-WS API in Java?
+
+The JAX-WS API can be used to create SOAP-based web services.
+
+**Example**:
+```java
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.Endpoint;
+
+@WebService
+public class HelloService {
+    @WebMethod
+    public String sayHello(String name) {
+        return "Hello, " + name + "!";
+    }
+
+    public static void main(String[] args) {
+        Endpoint.publish("http://localhost:8080/hello", new HelloService());
+        System.out.println("Service started at http://localhost:8080/hello");
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 71. What is the use of the Java API for JSON Processing (JSON-P)?
+
+JSON-P is used for:
+- **JSON Processing**: Parsing, generating, and manipulating JSON data.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 72. How do you use the JSON-P API in Java?
+
+The JSON-P API can be used to parse and generate JSON data.
+
+**Example**:
+```java
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import java.io.StringReader;
+
+public class JSONPExample {
+    public static void main(String[] args) {
+        String jsonString = "{\"name\":\"John\",\"age\":30}";
+        JsonReader reader = Json.createReader(new StringReader(jsonString));
+        JsonObject jsonObject = reader.readObject();
+        reader.close();
+
+        System.out.println("Name: " + jsonObject.getString("name"));
+        System.out.println("Age: " + jsonObject.getInt("age"));
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 73. What is the use of the Java API for JSON Binding (JSON-B)?
+
+JSON-B is used for:
+- **JSON Binding**: Converting Java objects to JSON and vice versa.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 74. How do you use the JSON-B API in Java?
+
+The JSON-B API can be used to convert Java objects to JSON and vice versa.
+
+**Example**:
+```java
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
+
+public class JSONBExample {
+    public static void main(String[] args) {
+        Person person = new Person("John", 30);
+        Jsonb jsonb = JsonbBuilder.create();
+        String jsonString = jsonb.toJson(person);
+        System.out.println("JSON: " + jsonString);
+
+        Person newPerson = jsonb.fromJson(jsonString, Person.class);
+        System.out.println("Person: " + newPerson.getName() + ", " + newPerson.getAge());
+    }
+
+    public static class Person {
+        private String name;
+        private int age;
+
+        public Person() {}
+
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // Getters and setters
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 75. What is the use of the Java API for WebSocket?
+
+The Java API for WebSocket is used for:
+- **WebSocket Communication**: Enabling full-duplex communication between clients and servers over a single TCP connection.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 76. How do you use the Java API for WebSocket?
+
+The Java API for WebSocket can be used to create WebSocket endpoints.
+
+**Example**:
+```java
+import javax.websocket.OnMessage;
+import javax.websocket.Session;
+import javax.websocket.server.ServerEndpoint;
+import javax.websocket.OnOpen;
+import javax.websocket.OnClose;
+
+@ServerEndpoint("/websocket")
+public class WebSocketEndpoint {
+
+    @OnOpen
+    public void onOpen(Session session) {
+        System.out.println("Session opened: " + session.getId());
+    }
+
+    @OnMessage
+    public String onMessage(String message) {
+        return "Received: " + message;
+    }
+
+    @OnClose
+    public void onClose(Session session) {
+        System.out.println("Session closed: " + session.getId());
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 77. What is the use of the Java API for Batch Processing (JSR 352)?
+
+The Java API for Batch Processing (JSR 352) is used for:
+- **Batch Processing**: Managing and processing large volumes of data in batch jobs.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 78. How do you use the Java API for Batch Processing?
+
+The Java API for Batch Processing can be used to define, configure, and execute batch jobs.
+
+**Example**:
+```java
+import javax.batch.api.chunk.AbstractItemReader;
+import javax.batch.api.chunk.AbstractItemWriter;
+import javax.batch.runtime.BatchRuntime;
+import java.util.List;
+import java.util.Properties;
+
+public class BatchProcessingExample {
+    public static void main(String[] args) {
+        Properties jobParameters = new Properties();
+        BatchRuntime.getJobOperator().start("myJob", jobParameters);
+    }
+
+    public static class MyItemReader extends AbstractItemReader {
+        @Override
+        public Object readItem() throws Exception {
+            return "Item";
+        }
+    }
+
+    public static class MyItemWriter extends AbstractItemWriter {
+        @Override
+        public void writeItems(List<Object> items) throws Exception {
+            for (Object item : items) {
+                System.out.println("Writing item: " + item);
+            }
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 79. What is the use of the Java API for Concurrency Utilities (JSR 236)?
+
+The Java API for Concurrency Utilities (JSR 236) is used for:
+- **Concurrency**: Managing concurrent tasks in Java EE applications.
+
+## 80. How do you use the Java API for Concurrency Utilities?
+
+The Java API for Concurrency Utilities can be used to manage concurrent tasks.
+
+**Example**:
+```java
+import javax.enterprise.concurrent.ManagedExecutorService;
+import javax.naming.InitialContext;
+import java.util.concurrent.Future;
+
+public class ConcurrencyUtilitiesExample {
+    public static void main(String[] args) throws Exception {
+        InitialContext ctx = new InitialContext();
+        ManagedExecutorService executor = (ManagedExecutorService) ctx.lookup("java:comp/DefaultManagedExecutorService");
+
+        Future<String> future = executor.submit(() -> "Task completed");
+        System.out.println(future.get());
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 81. What is the use of the Java API for JSON Processing (JSR 353)?
+
+JSR 353 is used for:
+- **JSON Processing**: Parsing, generating, and manipulating JSON data.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 82. How do you use the JSR 353 in Java?
+
+JSR 353 can be used to parse and generate JSON data.
+
+**Example**:
+```java
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import java.io.StringReader;
+
+public class JSONPExample {
+    public static void main(String[] args) {
+        String jsonString = "{\"name\":\"John\",\"age\":30}";
+        JsonReader reader = Json.createReader(new StringReader(jsonString));
+        JsonObject jsonObject = reader.readObject();
+        reader.close();
+
+        System.out.println("Name: " + jsonObject.getString("name"));
+        System.out.println("Age: " + jsonObject.getInt("age"));
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 83. What is the use of the Java API for JSON Binding (JSR 367)?
+
+JSR 367 is used for:
+- **JSON Binding**: Converting Java objects to JSON and vice versa.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 84. How do you use the JSR 367 in Java?
+
+JSR 367 can be used to convert Java objects to JSON and vice versa.
+
+**Example**:
+```java
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
+
+public class JSONBExample {
+    public static void main(String[] args) {
+        Person person = new Person("John", 30);
+        Jsonb jsonb = JsonbBuilder.create();
+        String jsonString = jsonb.toJson(person);
+        System.out.println("JSON: " + jsonString);
+
+        Person newPerson = jsonb.fromJson(jsonString, Person.class);
+        System.out.println("Person: " + newPerson.getName() + ", " + newPerson.getAge());
+    }
+
+    public static class Person {
+        private String name;
+        private int age;
+
+        public Person() {}
+
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // Getters and setters
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 85. What is the use of the Java API for JSON Processing (JSR 374)?
+
+JSR 374 is used for:
+- **JSON Processing**: Parsing, generating, and manipulating JSON data.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
