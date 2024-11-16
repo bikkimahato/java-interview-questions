@@ -2241,7 +2241,7 @@ These classes and interfaces are essential tools for developing concurrent appli
 #### **[⬆ Back to Top](#level--medium)**
 ---
 
-# Medium Java Interview Questions and Answers
+# Hard Java Interview Questions and Answers
 
 ## 1. Explain the concept of memory leaks in Java.
 
