@@ -281,20 +281,20 @@ Happy coding! If you find this repository helpful, please give it a star ⭐ and
 | 24  | [What is the use of the javax.tools package?](#24-what-is-the-use-of-the-javaxtools-package) |
 | 25  | [How do you perform annotation processing in Java?](#25-how-do-you-perform-annotation-processing-in-java) |
 | 26  | [What is the use of the javax.annotation.processing package?](#26-what-is-the-use-of-the-javaxannotationprocessing-package) |
-| 27  | [How do you create custom annotations in Java?](#27-how-do-you-create-custom-annotations-in-java) |
-| 28  | [What is the use of the javax.inject package?](#28-what-is-the-use-of-the-javaxinject-package) |
+| 27  | [How do you use the Java Reflection API?](#27-how-do-you-use-the-java-reflection-api) |
+| 28  | [What is the use of the java.lang.reflect package?](#28-what-is-the-use-of-the-javalangreflect-package) |
 | 29  | [How do you perform dependency injection in Java?](#29-how-do-you-perform-dependency-injection-in-java) |
-| 30  | [What is the difference between constructor injection and setter injection?](#30-what-is-the-difference-between-constructor-injection-and-setter-injection) |
-| 31  | [What is the use of the javax.enterprise.context package?](#31-what-is-the-use-of-the-javaxenterprisecontext-package) |
-| 32  | [What is the use of the javax.enterprise.inject package?](#32-what-is-the-use-of-the-javaxenterpriseinject-package) |
-| 33  | [What is the use of the javax.enterprise.event package?](#33-what-is-the-use-of-the-javaxenterpriseevent-package) |
-| 34  | [How do you use the CDI (Contexts and Dependency Injection) in Java?](#34-how-do-you-use-the-cdi-contexts-and-dependency-injection-in-java) |
-| 35  | [What is the use of the javax.enterprise.inject.spi package?](#35-what-is-the-use-of-the-javaxenterpriseinjectspi-package) |
-| 36  | [How do you use the Bean Validation API in Java?](#36-how-do-you-use-the-bean-validation-api-in-java) |
-| 37  | [What is the use of the javax.validation package?](#37-what-is-the-use-of-the-javaxvalidation-package) |
-| 38  | [How do you create custom validators in Java?](#38-how-do-you-create-custom-validators-in-java) |
-| 39  | [How do you use the JPA (Java Persistence API) in Java?](#39-how-do-you-use-the-jpa-java-persistence-api-in-java) |
-| 40  | [What is the use of the javax.persistence package?](#40-what-is-the-use-of-the-javaxpersistence-package) |
+| 30  | [What is the use of the Spring framework in Java?](#30-what-is-the-use-of-the-spring-framework-in-java) |
+| 31  | [How do you perform aspect-oriented programming in Java?](#31-how-do-you-perform-aspect-oriented-programming-in-java) |
+| 32  | [What is the use of the AspectJ library in Java?](#32-what-is-the-use-of-the-aspectj-library-in-java) |
+| 33  | [How do you use the Java Persistence API (JPA)?](#33-how-do-you-use-the-java-persistence-api-jpa) |
+| 34  | [What is the use of the javax.persistence package?](#34-what-is-the-use-of-the-javaxpersistence-package) |
+| 35  | [How do you perform object-relational mapping in Java?](#35-how-do-you-perform-object-relational-mapping-in-java) |
+| 36  | [What is the use of the Hibernate framework in Java?](#36-what-is-the-use-of-the-hibernate-framework-in-java) |
+| 37  | [How do you use the Java Servlet API?](#37-how-do-you-use-the-java-servlet-api) |
+| 38  | [What is the use of the javax.servlet package?](#38-what-is-the-use-of-the-javaxservlet-package) |
+| 39  | [How do you use the JavaServer Pages (JSP) technology?](#39-how-do-you-use-the-javaserver-pages-jsp-technology) |
+| 40  | [What is the use of the javax.servlet.jsp package?](#40-what-is-the-use-of-the-javaxservletjsp-package) |(#40-what-is-the-use-of-the-javaxpersistence-package) |
 | 41  | [How do you perform object-relational mapping in Java?](#41-how-do-you-perform-object-relational-mapping-in-java) |
 | 42  | [What is the use of the Hibernate framework in Java?](#42-what-is-the-use-of-the-hibernate-framework-in-java) |
 | 43  | [How do you use the JTA (Java Transaction API) in Java?](#43-how-do-you-use-the-jta-java-transaction-api-in-java) |
@@ -305,41 +305,41 @@ Happy coding! If you find this repository helpful, please give it a star ⭐ and
 | 48  | [What is the use of the java.sql package?](#48-what-is-the-use-of-the-javasql-package) |
 | 49  | [How do you perform connection pooling in Java?](#49-how-do-you-perform-connection-pooling-in-java) |
 | 50  | [What is the use of the javax.sql package?](#50-what-is-the-use-of-the-javaxsql-package) |
-| 51  | [How do you use the Java EE (Enterprise Edition) platform in Java?](#51-how-do-you-use-the-java-ee-enterprise-edition-platform-in-java) |
-| 52  | [What is the use of the javax.ejb package?](#52-what-is-the-use-of-the-javaxejb-package) |
-| 53  | [How do you create enterprise beans in Java?](#53-how-do-you-create-enterprise-beans-in-java) |
-| 54  | [What is the use of the javax.jms package?](#54-what-is-the-use-of-the-javaxjms-package) |
-| 55  | [How do you use the Java Message Service (JMS) in Java?](#55-how-do-you-use-the-java-message-service-jms-in-java) |
-| 56  | [What is the use of the javax.mail package?](#56-what-is-the-use-of-the-javaxmail-package) |
-| 57  | [How do you send email using the JavaMail API?](#57-how-do-you-send-email-using-the-javamail-api) |
-| 58  | [What is the use of the javax.ws.rs package?](#58-what-is-the-use-of-the-javaxwsrs-package) |
-| 59  | [How do you create RESTful web services in Java?](#59-how-do-you-create-restful-web-services-in-java) |
-| 60  | [What is the use of the JAX-RS (Java API for RESTful Web Services) in Java?](#60-what-is-the-use-of-the-jax-rs-java-api-for-restful-web-services-in-java) |
-| 61  | [How do you use the JAX-WS (Java API for XML Web Services) in Java?](#61-how-do-you-use-the-jax-ws-java-api-for-xml-web-services-in-java) |
-| 62  | [What is the use of the javax.xml.ws package?](#62-what-is-the-use-of-the-javaxxmlws-package) |
-| 63  | [How do you create SOAP web services in Java?](#63-how-do-you-create-soap-web-services-in-java) |
-| 64  | [What is the use of the JAXB (Java Architecture for XML Binding) in Java?](#64-what-is-the-use-of-the-jaxb-java-architecture-for-xml-binding-in-java) |
-| 65  | [How do you perform XML binding in Java?](#65-how-do-you-perform-xml-binding-in-java) |
-| 66  | [What is the use of the javax.xml.bind package?](#66-what-is-the-use-of-the-javaxxmlbind-package) |
-| 67  | [How do you use the JavaFX platform in Java?](#67-how-do-you-use-the-javafx-platform-in-java) |
-| 68  | [What is the use of the javafx.application package?](#68-what-is-the-use-of-the-javafxapplication-package) |
-| 69  | [How do you create JavaFX applications in Java?](#69-how-do-you-create-javafx-applications-in-java) |
-| 70  | [What is the use of the javafx.scene package?](#70-what-is-the-use-of-the-javafxscene-package) |
-| 71  | [How do you create graphical user interfaces using JavaFX?](#71-how-do-you-create-graphical-user-interfaces-using-javafx) |
-| 72  | [What is the use of the javafx.stage package?](#72-what-is-the-use-of-the-javafxstage-package) |
-| 73  | [How do you use the Java 2D API in Java?](#73-how-do-you-use-the-java-2d-api-in-java) |
-| 74  | [What is the use of the java.awt package?](#74-what-is-the-use-of-the-javaawt-package) |
-| 75  | [How do you perform custom painting in Java?](#75-how-do-you-perform-custom-painting-in-java) |
-| 76  | [What is the use of the javax.swing package?](#76-what-is-the-use-of-the-javaxswing-package) |
-| 77  | [How do you create Swing applications in Java?](#77-how-do-you-create-swing-applications-in-java) |
-| 78  | [What is the use of the javax.swing.event package?](#78-what-is-the-use-of-the-javaxswingevent-package) |
-| 79  | [How do you handle events in Swing applications?](#79-how-do-you-handle-events-in-swing-applications) |
-| 80  | [What is the use of the javax.swing.plaf package?](#80-what-is-the-use-of-the-javaxswingplaf-package) |
-| 81  | [How do you customize the look and feel of Swing applications?](#81-how-do-you-customize-the-look-and-feel-of-swing-applications) |
-| 82  | [What is the use of the javax.swing.table package?](#82-what-is-the-use-of-the-javaxswingtable-package) |
-| 83  | [How do you create and manipulate tables in Swing applications?](#83-how-do-you-create-and-manipulate-tables-in-swing-applications) |
-| 84  | [What is the use of the javax.swing.tree package?](#84-what-is-the-use-of-the-javaxswingtree-package) |
-| 85  | [How do you create and manipulate trees in Swing applications?](#85-how-do-you-create-and-manipulate-trees-in-swing-applications) |
+| 51  | [What is the use of the Java Message Service (JMS) API?](#51-what-is-the-use-of-the-java-message-service-jms-api) |
+| 52  | [How do you use the JMS API in Java?](#52-how-do-you-use-the-jms-api-in-java) |
+| 53  | [What is the use of the Java Naming and Directory Interface (JNDI) API?](#53-what-is-the-use-of-the-java-naming-and-directory-interface-jndi-api) |
+| 54  | [How do you use the JNDI API in Java?](#54-how-do-you-use-the-jndi-api-in-java) |
+| 55  | [What is the use of the Java Management Extensions (JMX) API?](#55-what-is-the-use-of-the-java-management-extensions-jmx-api) |
+| 56  | [How do you use the JMX API in Java?](#56-how-do-you-use-the-jmx-api-in-java) |
+| 57  | [What is the use of the Java Authentication and Authorization Service (JAAS) API?](#57-what-is-the-use-of-the-java-authentication-and-authorization-service-jaas-api) |
+| 58  | [How do you use the JAAS API in Java?](#58-how-do-you-use-the-jaas-api-in-java) |
+| 59  | [What is the use of the Java Cryptography Architecture (JCA) API?](#59-what-is-the-use-of-the-java-cryptography-architecture-jca-api) |
+| 60  | [How do you use the JCA API in Java?](#60-how-do-you-use-the-jca-api-in-java) |
+| 61  | [What is the use of the Java Secure Socket Extension (JSSE) API?](#61-what-is-the-use-of-the-java-secure-socket-extension-jsse-api) |
+| 62  | [How do you use the JSSE API in Java?](#62-how-do-you-use-the-jsse-api-in-java) |
+| 63  | [What is the use of the Java Transaction API (JTA)?](#63-what-is-the-use-of-the-java-transaction-api-jta) |
+| 64  | [How do you use the JTA in Java?](#64-how-do-you-use-the-jta-in-java) |
+| 65  | [What is the use of the JavaMail API?](#65-what-is-the-use-of-the-javamail-api) |
+| 66  | [How do you use the JavaMail API in Java?](#66-how-do-you-use-the-javamail-api-in-java) |
+| 67  | [What is the use of the Java API for RESTful Web Services (JAX-RS)?](#67-what-is-the-use-of-the-java-api-for-restful-web-services-jax-rs) |
+| 68  | [How do you use the JAX-RS API in Java?](#68-how-do-you-use-the-jax-rs-api-in-java) |
+| 69  | [What is the use of the Java API for XML Web Services (JAX-WS)?](#69-what-is-the-use-of-the-java-api-for-xml-web-services-jax-ws) |
+| 70  | [How do you use the JAX-WS API in Java?](#70-how-do-you-use-the-jax-ws-api-in-java) |
+| 71  | [What is the use of the Java API for JSON Processing (JSON-P)?](#71-what-is-the-use-of-the-java-api-for-json-processing-json-p) |
+| 72  | [How do you use the JSON-P API in Java?](#72-how-do-you-use-the-json-p-api-in-java) |
+| 73  | [What is the use of the Java API for JSON Binding (JSON-B)?](#73-what-is-the-use-of-the-java-api-for-json-binding-json-b) |
+| 74  | [How do you use the JSON-B API in Java?](#74-how-do-you-use-the-json-b-api-in-java) |
+| 75  | [What is the use of the Java API for WebSocket?](#75-what-is-the-use-of-the-java-api-for-websocket) |
+| 76  | [How do you use the Java API for WebSocket?](#76-how-do-you-use-the-java-api-for-websocket) |
+| 77  | [What is the use of the Java API for Batch Processing (JSR 352)?](#77-what-is-the-use-of-the-java-api-for-batch-processing-jsr-352) |
+| 78  | [How do you use the Java API for Batch Processing?](#78-how-do-you-use-the-java-api-for-batch-processing) |
+| 79  | [What is the use of the Java API for Concurrency Utilities (JSR 236)?](#79-what-is-the-use-of-the-java-api-for-concurrency-utilities-jsr-236) |
+| 80  | [How do you use the Java API for Concurrency Utilities?](#80-how-do-you-use-the-java-api-for-concurrency-utilities) |
+| 81  | [What is the use of the Java API for JSON Processing (JSR 353)?](#81-what-is-the-use-of-the-java-api-for-json-processing-jsr-353) |
+| 82  | [How do you use the JSR 353 in Java?](#82-how-do-you-use-the-jsr-353-in-java) |
+| 83  | [What is the use of the Java API for JSON Binding (JSR 367)?](#83-what-is-the-use-of-the-java-api-for-json-binding-jsr-367) |
+| 84  | [How do you use the JSR 367 in Java?](#84-how-do-you-use-the-jsr-367-in-java) |
+| 85  | [What is the use of the Java API for JSON Processing (JSR 374)?](#85-what-is-the-use-of-the-java-api-for-json-processing-jsr-374) |
 | 86  | [What is the use of the javax.swing.text package?](#86-what-is-the-use-of-the-javaxswingtext-package) |
 | 87  | [How do you create and manipulate text components in Swing applications?](#87-how-do-you-create-and-manipulate-text-components-in-swing-applications) |
 | 88  | [What is the use of the javax.swing.undo package?](#88-what-is-the-use-of-the-javaxswingundo-package) |
@@ -3961,6 +3961,318 @@ public class JSONBExample {
 
 JSR 374 is used for:
 - **JSON Processing**: Parsing, generating, and manipulating JSON data.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 86. What is the use of the `javax.swing.text` package?
+
+The `javax.swing.text` package provides classes and interfaces for dealing with editable and non-editable text components. This package is used for handling the text model, text events, and text component views. It is fundamental for creating text editors and document-based applications.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 87. How do you create and manipulate text components in Swing applications?
+
+To create and manipulate text components in Swing applications, you can use classes like `JTextField`, `JTextArea`, `JEditorPane`, and `JTextPane`.
+
+**Example:**
+```java
+import javax.swing.*;
+
+public class TextComponentExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Text Component Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JTextField textField = new JTextField("Enter text here");
+        JTextArea textArea = new JTextArea("This is a text area", 5, 20);
+
+        frame.getContentPane().add(textField, "North");
+        frame.getContentPane().add(new JScrollPane(textArea), "Center");
+
+        frame.setVisible(true);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 88. What is the use of the `javax.swing.undo` package?
+
+The `javax.swing.undo` package provides support for undo and redo functionality. It includes classes like `UndoManager` and interfaces like `UndoableEdit`, which allow you to create and manage undoable actions.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 89. How do you implement undo and redo functionality in Swing applications?
+
+To implement undo and redo functionality, use the `UndoManager` class along with `JTextComponent` and `Document`.
+
+**Example:**
+```java
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.undo.*;
+
+public class UndoRedoExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Undo/Redo Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JTextArea textArea = new JTextArea();
+        UndoManager undoManager = new UndoManager();
+        textArea.getDocument().addUndoableEditListener(undoManager);
+
+        JButton undoButton = new JButton("Undo");
+        undoButton.addActionListener(e -> {
+            if (undoManager.canUndo()) {
+                undoManager.undo();
+            }
+        });
+
+        JButton redoButton = new JButton("Redo");
+        redoButton.addActionListener(e -> {
+            if (undoManager.canRedo()) {
+                undoManager.redo();
+            }
+        });
+
+        JPanel panel = new JPanel();
+        panel.add(undoButton);
+        panel.add(redoButton);
+
+        frame.getContentPane().add(new JScrollPane(textArea), "Center");
+        frame.getContentPane().add(panel, "South");
+
+        frame.setVisible(true);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 90. What is the use of the `javax.swing.filechooser` package?
+
+The `javax.swing.filechooser` package provides classes and interfaces for file selection dialogs. The main class in this package is `JFileChooser`, which allows users to navigate the file system and choose files or directories.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 91. How do you use the `JFileChooser` component in Swing applications?
+
+To use `JFileChooser`, create an instance of it, and call the `showOpenDialog` or `showSaveDialog` methods.
+
+**Example:**
+```java
+import javax.swing.*;
+import java.io.File;
+
+public class FileChooserExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("File Chooser Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JButton button = new JButton("Open File");
+        button.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            int result = fileChooser.showOpenDialog(frame);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+            }
+        });
+
+        frame.getContentPane().add(button, "Center");
+        frame.setVisible(true);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 92. What is the use of the `javax.swing.border` package?
+
+The `javax.swing.border` package provides classes and interfaces for drawing borders around Swing components. Borders can be used to visually separate components or to add decorative elements.
+
+## 93. How do you create and manipulate borders in Swing applications?
+
+To create and manipulate borders, use classes like `BorderFactory`, `LineBorder`, `EtchedBorder`, etc.
+
+**Example:**
+```java
+import javax.swing.*;
+import javax.swing.border.*;
+
+public class BorderExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Border Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JPanel panel = new JPanel();
+        panel.setBorder(BorderFactory.createTitledBorder("Titled Border"));
+
+        frame.getContentPane().add(panel, "Center");
+        frame.setVisible(true);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 94. What is the use of the `javax.swing.colorchooser` package?
+
+The `javax.swing.colorchooser` package provides classes for color selection dialogs. The main class is `JColorChooser`, which allows users to choose colors using a graphical interface.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 95. How do you use the `JColorChooser` component in Swing applications?
+
+To use `JColorChooser`, create an instance of it and call the `showDialog` method.
+
+**Example:**
+```java
+import javax.swing.*;
+import java.awt.*;
+
+public class ColorChooserExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Color Chooser Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JButton button = new JButton("Choose Color");
+        button.addActionListener(e -> {
+            Color color = JColorChooser.showDialog(frame, "Choose a color", Color.WHITE);
+            if (color != null) {
+                button.setBackground(color);
+            }
+        });
+
+        frame.getContentPane().add(button, "Center");
+        frame.setVisible(true);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 96. What is the use of the `javax.swing.text.html` package?
+
+The `javax.swing.text.html` package provides classes for handling HTML content in text components. It includes support for rendering HTML and managing HTML documents.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 97. How do you create and manipulate HTML text components in Swing applications?
+
+To create and manipulate HTML text components, use `JEditorPane` or `JTextPane` with an `HTMLEditorKit`.
+
+**Example:**
+```java
+import javax.swing.*;
+import javax.swing.text.html.*;
+
+public class HTMLEditorExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("HTML Editor Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JEditorPane editorPane = new JEditorPane();
+        editorPane.setContentType("text/html");
+        editorPane.setText("<html><body><h1>Hello, World!</h1><p>This is an HTML text.</p></body></html>");
+
+        frame.getContentPane().add(new JScrollPane(editorPane), "Center");
+        frame.setVisible(true);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 98. What is the use of the `javax.swing.text.html.parser` package?
+
+The `javax.swing.text.html.parser` package provides classes for parsing HTML documents. It includes a simple HTML parser that can be used to process HTML content.
+
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 99. How do you parse HTML documents in Swing applications?
+
+To parse HTML documents, use classes like `HTMLEditorKit.Parser` and `HTMLDocument`.
+
+**Example:**
+```java
+import javax.swing.*;
+import javax.swing.text.*;
+import javax.swing.text.html.*;
+import javax.swing.text.html.parser.*;
+import java.io.*;
+
+public class HTMLParserExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("HTML Parser Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JEditorPane editorPane = new JEditorPane();
+        editorPane.setContentType("text/html");
+        editorPane.setText("<html><body><h1>Hello, World!</h1><p>This is an HTML text.</p></body></html>");
+
+        HTMLDocument doc = (HTMLDocument) editorPane.getDocument();
+        HTMLEditorKit.Parser parser = new ParserDelegator();
+        try {
+            parser.parse(new StringReader(editorPane.getText()), new HTMLEditorKit.ParserCallback() {
+                public void handleText(char[] data, int pos) {
+                    System.out.println(new String(data));
+                }
+            }, true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        frame.getContentPane().add(new JScrollPane(editorPane), "Center");
+        frame.setVisible(true);
+    }
+}
+```
+#### **[⬆ Back to Top](#level--hard)**
+---
+
+## 100. What is the use of the `javax.swing.text.rtf` package?
+
+The `javax.swing.text.rtf` package provides classes for handling Rich Text Format (RTF) content in text components. It includes support for reading and writing RTF documents.
+
+**Example:**
+To handle RTF content, use the `RTFEditorKit` class.
+
+```java
+import javax.swing.*;
+import javax.swing.text.rtf.*;
+
+public class RTFEditorExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("RTF Editor Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        JEditorPane editorPane = new JEditorPane();
+        editorPane.setEditorKit(new RTFEditorKit());
+        editorPane.setText("{\\rtf1\\ansi\\deff0 {\\fonttbl {\\f0 Arial;}} \\f0\\fs40 Hello, World!}");
+
+        frame.getContentPane().add(new JScrollPane(editorPane), "Center");
+        frame.setVisible(true);
+    }
+}
+```
+
+These examples should give you a comprehensive understanding of how to use these Swing packages and components in your applications.
 
 #### **[⬆ Back to Top](#level--hard)**
 ---
